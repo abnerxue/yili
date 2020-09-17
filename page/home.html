@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>伊利员工福利平台</title>
+    <meta name="description" content="伊利员工福利平台" />
+    <meta name="keywords" content="伊利，员工福利" />
+    <!--处理样式-->
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <!--首页的CSS-->
+    <link rel="stylesheet" type="text/css" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../js/ui/layui-v2.5.6/layui/css/layui.css" />
+    <link rel="icon" href="../assets/icon/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/icon/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container-wrapper">
+      <div class="content">
+        <div class="header">
+          <div class="left">
+            <div class="left-img">
+              <img class="header-left-img" src="../assets/home/顶部左侧伊利logo.png" />
+              <img class="header-split-img" src="../assets/home/顶部logo与礼物icon割线.png" />
+              <img class="header-gift-img" src="../assets/home/顶部左侧礼品icon.png" />
+            </div>
+            <div class="header-title">伊起惠生活福礼平台</div>
+          </div>
+
+          <div class="right">
+            <img class="logo" src="../assets/home/logo.png" />
+            <span class="home">首页</span>
+          </div>
+        </div>
+        <div class="container">
+          <div class="container-top">
+            <div class="left">
+              <div class="user-info-container">
+                <div class="avatar">
+                  <div class="messgae-img">
+                    <img src="../assets/home/左侧消息icon.png" />
+                    <span class="welfare-count"></span>
+                  </div>
+                  <div class="avatar-img-wrapper"></div>
+                  <div class="info">
+                    <div class="quotation">“</div>
+                    <div>亲爱的<span class="employee-name"></span>，</div>
+                    <div>
+                      今天是您在伊利的第 <span class="work-day"></span>天，有你，真好！ ~
+                      <span class="quotation quotation2">”</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="account-info-container">
+                <div class="account">
+                  <span class="label">福利账号：</span>
+                  <span class="account-info">10012345</span>
+                </div>
+                <div class="account">
+                  <span class="label">绑定手机：</span>
+                  <span class="phone"></span>
+                </div>
+                <div class="account">
+                  <span class="label">所在职位：</span>
+                  <span class="position"></span>
+                </div>
+              </div>
+
+              <div class="integral-container">
+                <div class="item">
+                  <div class="desc">
+                    <div class="label">本年度累计积分：</div>
+                    <div class="item-weak-desc"></div>
+                  </div>
+                  <div>
+                    <img src="../assets/home/本年度累计积分进度条.png" class="integral-img" />
+                  </div>
+                  <span class="integral"></span>
+                </div>
+                <div class="item item2">
+                  <div style="margin-right: 40px">本年度累计现金：</div>
+                  <div>
+                    <img src="../assets/home/本年度累计现金进度条.png" class="money-img" />
+                  </div>
+                  <span class="cash-value"></span>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="welfare-container">
+                <div class="title">福利直达</div>
+                <div class="swiper-container">
+                  <div class="swiper-wrapper welfare-direct">
+                  </div>
+                  <img class="button-pre welfare-swiper-item" src="../assets/home/按左滑动.png" />
+                  <img class="button-next welfare-swiper-item" src="../assets/home/按右滑动.png" />
+                  <div class="swiper-pagination welfare-swiper-item"></div>
+                </div>
+              </div>
+
+              <div class="welfare-container welfare-policy-container">
+                <div class="title">
+                  <span>福利政策</span>
+                  <div class="title-right">
+                    <span class="title-label active">关怀性福利</span>
+                    <span class="title-label">激励性福利</span>
+                  </div>
+                </div>
+
+                <div class="swiper-container">
+                  <div class="swiper-wrapper birthday-welfare">
+                  </div>
+                  <img class="button-pre welfare-swiper-item2" src="../assets/home/按左滑动.png" />
+                  <img class="button-next welfare-swiper-item2" src="../assets/home/按右滑动.png" />
+                  <div class="swiper-pagination welfare-swiper-item2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-bottom">
+            <div class="information">
+              <ul class="welfare-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/qs/3.0.0/qs.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/constant.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/ui/layui-v2.5.6/layui/layui.all.js"></script>
+  </body>
+</html>

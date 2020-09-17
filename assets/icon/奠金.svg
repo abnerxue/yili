@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>奠金</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="29.4999705%" y1="0.0526868487%" x2="61.4965112%" y2="99.8099662%" id="linearGradient-1">
+            <stop stop-color="#ECECEC" offset="0.0527871622%"></stop>
+            <stop stop-color="#817E7E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="弹性福利PC1920*1080，新增12个图标排在里面" transform="translate(-1600.000000, -606.000000)">
+            <g id="奠金" transform="translate(1600.000000, 606.000000)">
+                <g>
+                    <ellipse id="椭圆形备份-11" fill="url(#linearGradient-1)" cx="24.7235059" cy="24.9192432" rx="24.7235059" ry="24.9192432"></ellipse>
+                    <text id="奠" font-family="PingFang-SC-Medium, PingFang SC" font-size="20" font-weight="400" fill="#FFFFFF">
+                        <tspan x="15" y="35">奠</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

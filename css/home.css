@@ -1,0 +1,437 @@
+.container-wrapper {
+  width: 1920px;
+  background-image: url('../assets/background/generalBackground.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+}
+
+.content {
+  padding-bottom: 50px;
+}
+
+.content .header {
+  width: 100%;
+  background-color: #ff4232;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .header .left {
+  display: flex;
+}
+
+.content .header .left-img .header-left-img {
+  margin: 15px 0 15px 61px;
+}
+
+.content .header .left-img .header-split-img {
+  margin: 23px 22px;
+}
+
+.content .header .left-img .header-gift-img {
+  margin: 20px 31px 20px 0;
+}
+
+.content .header .header-title {
+  margin: 20px 0;
+  width: 219px;
+  height: 38px;
+  font-size: 20px;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 28px;
+}
+
+.content .header .right {
+  width: 106px;
+  height: 38px;
+  line-height: 38px;
+  background: #ffbf62;
+  margin: 16px 70px 14px 0;
+  color: #fff;
+  box-shadow: 0px 0px 6px 0px rgba(89, 0, 0, 0.5);
+}
+
+.content .header .right .logo {
+  margin: 0 11px 0 14px;
+}
+
+.content .header .right .home {
+  font-size: 20px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.container {
+  margin: 54px 174px 0 178px;
+}
+.container .container-top {
+  display: flex;
+}
+
+.container .container-top .left {
+  width: 744px;
+}
+
+.container .container-top .left .user-info-container {
+  width: 100%;
+  height: 256px;
+  background-image: url(../assets/home/第一个区域渐变框.png);
+}
+
+.user-info-container .avatar {
+  display: flex;
+}
+
+.user-info-container .avatar .messgae-img {
+  margin: 42px 0 174px 44px;
+  position: relative;
+}
+
+.messgae-img .welfare-count {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  color: #fff;
+  background-color: #fe4334;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container .container-top .left .user-info-container .avatar .avatar-img-wrapper {
+  width: 136px;
+  height: 136px;
+  margin: 72px 0 48px 0;
+}
+
+.left .user-info-container .avatar .avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+.left .user-info-container .avatar .info {
+  width: 371px;
+  height: 136px;
+  margin: 31px 0 69px 44px;
+  color: #fff;
+  font-size: 24px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+}
+
+.info .desc {
+  display: flex;
+}
+
+.user-info-container .avatar .info .quotation {
+  font-size: 38px;
+  font-family: PingFang-SC-Semibold, PingFang-SC;
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: -20px;
+}
+.user-info-container .avatar .info .quotation2 {
+  margin-left: 85px;
+}
+
+.account-info-container {
+  background-color: #fff;
+  margin-top: 12px;
+  height: 198px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 42px 0 43px 67px;
+}
+
+.account-info-container .account:not(:first-child) {
+  margin-top: 19px;
+}
+
+.account-info-container .account .label {
+  color: #90939a;
+  font-size: 18px;
+}
+
+.account-info-container .account .info {
+  font-weight: 500;
+  color: #000;
+  font-size: 18px;
+}
+
+.integral-container {
+  background-color: #fff;
+  width: 100%;
+  height: 200px;
+  margin-top: 16px;
+}
+
+.integral-container .item {
+  font-weight: 500;
+  color: #000;
+  display: flex;
+  height: 60px;
+  padding-top: 41px;
+  padding-left: 66px;
+  font-size: 18px;
+}
+
+.integral-container .item2 {
+  padding-top: 32px;
+}
+
+.integral-container .item .integral {
+  color: #0086cd;
+  margin-left: 30px;
+}
+
+.integral-container .item .cash-value {
+  color: #ff9b0b;
+  margin-left: 122px;
+}
+
+.integral-container .item .desc {
+  position: relative;
+}
+
+.integral-container .item .item-weak-desc {
+  font-size: 14px;
+  /* position: absolute;
+  left: -20px;
+  top: 30px; */
+  margin-top: 8px;
+  color: #b3b3b3;
+}
+
+.integral-container .item .label {
+  margin-right: 40px;
+}
+
+.right {
+  width: 808px;
+  margin-left: 16px;
+}
+
+.right .welfare-container {
+  width: 100%;
+  height: 256px;
+  background-color: #fff;
+}
+
+.right .welfare-container .title {
+  font-size: 24px;
+  color: #ff9a09;
+  font-weight: 500;
+  padding: 27px 0 0 49px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 180px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0 115px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.swiper-container .button-pre {
+  position: absolute;
+  top: 45px;
+  left: 32px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-container .button-next {
+  position: absolute;
+  top: 45px;
+  right: 40px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welfare-item {
+  text-align: center;
+}
+
+.my-welfare {
+  text-align: center;
+  cursor: pointer;
+}
+
+.title-label {
+  color: #000;
+  font-weight: 500;
+  font-size: 22px;
+  margin: 8px 0 6px 0;
+}
+
+.desc {
+  font-size: 16px;
+  color: #696969;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet {
+  background-color: #ff9a09;
+  width: 7px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  width: 18px;
+}
+
+.right .welfare-policy-container {
+  margin-top: 16px;
+  height: 414px;
+}
+
+.right .welfare-policy-container .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 59px 0 49px;
+}
+
+.right .welfare-policy-container .title .title-label {
+  width: 119px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 0px 48px 48px 0px;
+  border: 1px solid #aeaeae;
+  color: #000;
+  margin-left: -8px;
+}
+
+.right .welfare-policy-container .title .active {
+  color: #fff;
+  border-radius: 48px 0px 0px 48px;
+  background-color: #ff9a09;
+}
+
+.welfare-policy-container .swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 35px;
+}
+
+.welfare-policy-container .swiper-container .button-pre {
+  position: absolute;
+  top: 120px;
+  left: 32px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welfare-policy-container .swiper-container .button-next {
+  position: absolute;
+  top: 120px;
+  right: 40px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.welfare-policy-container .welfare-item {
+  width: 20%;
+}
+
+.welfare-policy-container .welfare-item .title-label {
+  margin-top: 12px;
+}
+
+.welfare-policy-container .swiper-slide {
+  justify-content: flex-start;
+  align-items: initial;
+}
+
+.welfare-policy-container .swiper-container .swiper-pagination {
+  bottom: 0;
+}
+
+.information {
+  margin-top: 16px;
+  background: #fff;
+  width: 1568px;
+  height: 206px;
+  border-radius: 4px;
+  padding: 20px 0 20px 67px;
+  box-sizing: border-box;
+}
+
+.information .welfare-list .li {
+  height: 25px;
+  font-size: 18px;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #000000;
+  line-height: 25px;
+  margin-top: 10px;
+}
+
+.information .welfare-list .li .time {
+  margin-left: 34px;
+  display: inline-block;
+}
+
+.information .welfare-list .li .circle {
+  width: 8px;
+  height: 8px;
+  margin-bottom: 3px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.information .welfare-list .li .info {
+  margin-left: 110px;
+  display: inline-block;
+}
+
+.circle-blue {
+  background-color: #0086cd;
+}
+
+.blue {
+  color: #0086cd;
+}
+
+.circle-orange {
+  background-color: #ff9b0b;
+}
+
+.orange {
+  color: #ff9b0b;
+}
+
+.circle-green {
+  background-color: #58b530;
+}
+
+.green {
+  color: #58b530;
+}
