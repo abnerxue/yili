@@ -66,7 +66,7 @@ window.onload = function () {
     let r=window.location.search.substr(1).match(reg);
     if(r!=null){
      //  return unescape(r[2])   ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。
-     return decodeURI()(r[2])
+     return decodeURI(r[2])
     }
     return null;
  }
