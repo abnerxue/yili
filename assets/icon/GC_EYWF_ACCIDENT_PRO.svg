@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63 (92445) - https://sketch.com -->
+    <title>GC_EYWF_ACCIDENT_PRO</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="29.4830715%" y1="0%" x2="61.5574634%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFECBD" offset="0%"></stop>
+            <stop stop-color="#FBD473" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="弹性福利PC1920*1080，新增12个图标排在里面" transform="translate(-1366.000000, -498.000000)">
+            <g id="GC_EYWF_ACCIDENT_PRO" transform="translate(1366.000000, 498.000000)">
+                <g id="编组-8" fill="url(#linearGradient-1)">
+                    <ellipse id="GC_EYWF_ELLIPSE备份-7" cx="24.7235059" cy="24.9192432" rx="24.7235059" ry="24.9192432"></ellipse>
+                </g>
+                <g id="yiliaobaoxian" transform="translate(13.000000, 11.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M13.4117647,12.5998923 L13.4117647,9.09991525 L10.5882353,9.09991525 L10.5882353,12.5998923 L7.05882354,12.5998923 L7.05882354,15.3998739 L10.5882353,15.3998739 L10.5882353,18.899851 L13.4117647,18.899851 L13.4117647,15.3998739 L16.9411765,15.3998739 L16.9411765,12.5998923 L13.4117647,12.5998923 Z M13.3421176,0.51703824 C13.3835294,0.554371315 17.5614118,4.22328059 22.0009412,4.22328059 C23.1058824,4.22328059 24,5.1192747 24,6.22340079 L24,13.6713519 C24,19.148116 20.7529412,22.3447617 13.1425883,27.6413936 C12.4571636,28.1195355 11.5428364,28.1195355 10.8574118,27.6413936 C3.24705884,22.3438284 0,19.148116 0,13.6713519 L0,6.22340079 C0,5.1192747 0.895999996,4.22328056 2,4.22328059 C6.46305883,4.22328059 10.5976471,0.570237902 10.6607059,0.514238247 C11.4211576,-0.172484905 12.5840667,-0.171270995 13.3430588,0.51703824 L13.3421176,0.51703824 Z" id="形状"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

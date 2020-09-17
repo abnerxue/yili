@@ -1,0 +1,145 @@
+.container {
+  width: 1920px;
+  min-width: 100px;
+  height: 880px;
+  background-image: url('../assets/background/GC_EYWF_CAKE_BG.png');
+  background-repeat: no-repeat;
+  background-size: 1920px 1080px;
+  padding-bottom: 50px;
+}
+
+.container .header {
+  width: 100%;
+  background-color: #ff4232;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .header .left {
+  display: flex;
+}
+
+.container .header .left-img .header-left-img {
+  margin: 15px 0 15px 61px;
+}
+
+.container .header .left-img .header-split-img {
+  margin: 23px 22px;
+}
+
+.container .header .left-img .header-gift-img {
+  margin: 20px 31px 20px 0;
+}
+
+.container .header .header-title {
+  margin: 20px 0;
+  width: 219px;
+  height: 38px;
+  font-size: 20px;
+  font-family: PingFang-SC-Medium, PingFang-SC;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 28px;
+}
+
+.container .header .right {
+  width: 106px;
+  height: 38px;
+  line-height: 38px;
+  background: #ffbf62;
+  margin: 16px 70px 14px 0;
+  color: #fff;
+  box-shadow: 0px 0px 6px 0px rgba(89, 0, 0, 0.5);
+}
+
+.container .header .right .logo {
+  margin: 0 11px 0 14px;
+}
+
+.container .header .right .home {
+  font-size: 20px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #ffffff;
+}
+.welfare {
+  width: 1568px;
+  padding: 0 24px;
+  height: 820px;
+  background-color: #fff;
+  margin: 30px auto 0;
+}
+.overview {
+  overflow: hidden;
+}
+.title {
+  margin: 28px 0px 0px 28px;
+  width: 189px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ff9a09;
+  line-height: 33px;
+}
+
+.title .title-img {
+  margin-right: 21px;
+  position: relative;
+  bottom: 2px;
+}
+
+.content {
+  margin: 80px 281px 0 337px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 50%;
+}
+
+.right-item {
+  width: 50%;
+  text-align: right;
+}
+
+.detail-content .right-content{
+  width: 270px;
+  text-align: right;
+}
+
+.content .lable,
+.detail-content .right-content .lable {
+  font-weight: 500;
+  color: #999999;
+  line-height: 36px;
+  height: 36px;
+  display: inline-block;
+  min-width: 165px;
+  margin-right: 34px;
+  text-align: right;
+}
+
+.detail-content {
+  margin: 0 281px 0 204px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.detail-content .detail-item {
+  display: flex;
+  margin-top: 74px;
+}
+
+.detail {
+  margin-top: 126px;
+}
+
+.detail-content .detail-img {
+  margin-right: 81px;
+}
