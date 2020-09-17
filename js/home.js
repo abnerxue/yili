@@ -92,67 +92,7 @@ const Home = (function () {
 
   
   
-    // const [data] = homeData
-    // $('.employee-name').append(data.NAME.VALUE)
-    // $('.work-day').append(data.GC_WORK_DAYS.VALUE)
-    // $('.account-info').append(data.EMPLID.VALUE)
-    // $('.phone').append(data.MOBILE_PHONE.VALUE)
-    // $('.position').append(data.GC_POSITION_DESCR.VALUE)
-    // $('.avatar-img-wrapper').append(`<img src=${data.EMPLOYEE_PHOTO.VALUE} class='avatar-img'/>`)
-    // if (data.GC_TODO_NUM.VALUE && Number(data.GC_TODO_NUM.VALUE) !== 0) {
-    //   $('.welfare-count').append(data.GC_TODO_NUM.VALUE)
-    //   $('.welfare-count').bind('click', () => {
-    //     window.location.href = 'employeeOptionalPayment.html?EMPLID='+data.EMPLID.VALUE
-    //   })
-    // } else {
-    //   $('.welfare-count').hide()
-    // }
-    // $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
-    // $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
-    // $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
-    // $('.container-wrapper').css(
-    //   'background',
-    //   `url(${data.GC_EYWF_BG_PICTUE.VALUE}) 100% 100%  no-repeat`
-    // )
-
-    // const welfareDirect = $('.welfare-direct')
-    // let welfareDirectElement = ''
-    // data.GC_EYWF_FUNC.forEach(g => {
-    //   welfareDirectElement += `
-    //     <div class="welfare-item welfare-go" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
-    //        <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
-    //        <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
-    //        <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
-    //     </div>
-    //   `
-    // })
-    // welfareDirect.append(welfareDirectElement)
-
-    // const birthdayWelfare = $('.birthday-welfare')
-    // let birthdayWelfareElement = ''
-    // data.GC_EYWF_POLY.forEach(g => {
-    //   birthdayWelfareElement += `
-    //     <div class="welfare-item" onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT.VALUE}\`)">
-    //        <img src=${g.GC_COST_PICTUE.VALUE} />
-    //        <div class="title-label">${g.GC_COST_NAME.VALUE}</div>
-    //     </div>
-    //   `
-    // })
-    // birthdayWelfare.append(birthdayWelfareElement)
-
-    // const welfareList = $('.welfare-list')
-    // let welfareListElement = ''
-    // data.GC_EYWF_LIST.forEach(g => {
-    //   const color = g.GC_EYWF_TD_COLOR.VALUE
-    //   welfareListElement += `
-    //     <li class="li">
-    //       <span class="circle" style=background-color:${color}></span>
-    //       <span class="time" style=color:${color}>${g.GC_EYWF_TD_DATE.VALUE}</span>
-    //       <span class="info" style=color:${color}>${g.GC_EYWF_TD_DESCR.VALUE}</span>
-    //     </li>
-    //   `
-    // })
-    // welfareList.append(welfareListElement)
+   
   
 
   function initSwiper() {
@@ -184,15 +124,7 @@ const Home = (function () {
       window.location.href = 'employeeOptionalPayment.html'
     })
 
-    // $('.birthday-welfare').click(function () {
-    //   layer.open({
-    //     type: 1,
-    //     title: ['福利详情', 'font-size:18px;'],
-    //     area: ['820px', '440px'], //宽高
-    //     shadeClose: true,
-    //     content: ''
-    //   })
-    // })
+
   }
 
   function init() {

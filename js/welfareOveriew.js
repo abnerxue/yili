@@ -26,19 +26,7 @@ const WelfareOveriew = (function () {
       activeWrapper.html(activeWrapperElement)
     }
   )
-    // let activeWrapperElement = ''
-    // welfareOverviewDatas.forEach(w => {
-    //   activeWrapperElement += `
-    //     <div class="active-wrapper" >
-    //       <div class="active-title" data-id=1>${w.GC_EYWF_EVNT_NAME.VALUE}</div>
-    //       <div class="active"  onclick="handleGo(\`${w.GC_EYWF_EVNT_SEQ.VALUE}\`,\`${w.GC_JD_EVNT_NBR.VALUE}\`)">
-    //        <img class="active-img" src=${w.GC_EYWF_EVNT_PICTURE.VALUE} />
-    //         <div class="desc">${w.GC_EYWF_EVNT_COMTS.VALUE}</div>
-    //       </div>
-    //     </div>
-    //   `
-    // })
-    // activeWrapper.html(activeWrapperElement)
+
     
    
 
