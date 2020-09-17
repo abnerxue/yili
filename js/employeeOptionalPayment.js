@@ -4,17 +4,10 @@ const EmployeeOption = (function () {
 
 
    
-   function routerquery() {
-    var result;
-    var url=window.location.search; //获取url中"?"符后的字串  
-    if(url.indexOf("?")!=-1){
-    result = url.substr(url.indexOf("=")+1,1);
-    }
-    return result;
-    }
+
   // 真实接口数据,开启后删除loadElement
   function getData() {
-        const id=routerquery()
+        const id=getQuery(EMPLID)
       request(
         '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetChoosetWfData',
         {
@@ -88,7 +81,7 @@ const EmployeeOption = (function () {
       )
       $('.content').append("<div class='mask'/>")
     }
-     const id = routerquery()
+     const id = getQuery(EMPLID)
     request(
       '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetWishPicture',
       {
@@ -109,7 +102,7 @@ const EmployeeOption = (function () {
   }
 
   function submit(type) {
-    const id=routerquery()
+    const id=getQuery(EMPLID)
     request(
       '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData',
       {
@@ -141,12 +134,22 @@ const EmployeeOption = (function () {
       $('.birthday-img-wrapper').remove()
     })
   }
-
+  function getQuery(name){
+    let reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+    let r=window.location.search.substr(1).match(reg);
+    if(r!=null){
+     //  return unescape(r[2])   ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。
+     return decodeURI()(r[2])
+    }
+    return null;
+ }
+ 
   function init() {
     loadElement()
     isShowBirthdayImg()
     getData()
-    routerquery()
+   
+    getQuery(name)
   }
 
   return {

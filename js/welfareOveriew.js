@@ -1,7 +1,7 @@
 const WelfareOveriew = (function () {
   function init() {
     const activeWrapper = $('.active-wrapper-container')
-    const id= routerquery()
+    const id= getQuery(EMPLID)
       // 真实接口数据
   request(
     '/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetEventList',
@@ -38,7 +38,7 @@ const WelfareOveriew = (function () {
 })()
  function handleGo(GC_EYWF_EVNT_SEQ,GC_JD_EVNT_NBR){
    console.log(GC_EYWF_EVNT_SEQ,GC_JD_EVNT_NBR)
-    const id=routerquery()
+    const id=getQuery(EMPLID)
       request('WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetEventUrl',{
         GC_EYWF_EVNT_SEQ:GC_EYWF_EVNT_SEQ,
         GC_JD_EVNT_NBR:GC_JD_EVNT_NBR,
@@ -48,12 +48,15 @@ const WelfareOveriew = (function () {
          window.location.href=data.GC_EYWF_EVNT_URL.VALUE
     })
  }
- function routerquery() {
-  var result;
-  var url=window.location.search; //获取url中"?"符后的字串  
-  if(url.indexOf("?")!=-1){
-  result = url.substr(url.indexOf("=")+1,1);
-  }
-  return result;
+
+
+  function getQuery(name){
+     let reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+     let r=window.location.search.substr(1).match(reg);
+     if(r!=null){
+      //  return unescape(r[2])   ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。
+      return decodeURI()(r[2])
+     }
+     return null;
   }
 WelfareOveriew.init()
