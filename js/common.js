@@ -2,9 +2,9 @@ function request(url, params, successCallback, type = 'get', dataType = 'json') 
   const realUrl = Constant.BASE_URL + url
   $.ajax({
     type,
-    // 'headers': {'Access-Control-Allow-Origin': '*',
-    // "access-control-allow-credentials": "true",
-    // 'withCredentials': 'false'},
+    headers: {'Access-Control-Allow-Origin': '*',
+    "access-control-allow-credentials": "true",
+    },
     url: realUrl,
     data: params,
     dataType,

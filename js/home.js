@@ -4,9 +4,9 @@ const Home = (function () {
   request(
     '/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetHomeInfo',
    
-    data => {
-      console.log(data)
-  const [data] = data
+    h_data => {
+      console.log(h_data)
+  const [data] = h_data
   $('.employee-name').append(data.NAME.VALUE)
   $('.work-day').append(data.GC_WORK_DAYS.VALUE)
   $('.account-info').append(data.EMPLID.VALUE)
