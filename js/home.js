@@ -58,17 +58,10 @@ const Home = (function () {
             welfareDirectElement += '<div class="swiper-slide">'
             w.forEach(g => {
               welfareDirectElement += `
-              /**
-               * anonymouse class.
-               *
-               * @author	Unknown
-               * @since	v0.0.1
-               * @version	v1.0.0	Monday, September 21st, 2020.
-               */
-              <div class="welfare-item" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL[0].VALUE}\`)">
+             <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME[0].VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL[0].VALUE}\`)">
                 <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
-                <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
-                <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
+                <div class="title-label">${g.GC_EYWF_FUNC_NAME[0].VALUE}</div>
+                <div class="desc">${g.GC_EYWF_FUNC_DESCR[0].VALUE}</div>
               </div>
             `
             })
@@ -78,14 +71,15 @@ const Home = (function () {
 
           const birthdayWelfare = $('.birthday-welfare')
           let birthdayWelfareElement = ''
+          console.log(data.GC_EYWF_POLY,'data.GC_EYWF_POLY')
           const list = chunk(data.GC_EYWF_POLY, 10)
           list.forEach(l => {
             birthdayWelfareElement += '<div class="swiper-slide" >'
             l.forEach(g => {
               birthdayWelfareElement += `
-            <div class="welfare-item" onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT.VALUE}\`)>
-               <img src=${g.GC_COST_PICTUE.VALUE} />
-               <div class="title-label">${g.GC_COST_NAME.VALUE}</div>
+            <div class="welfare-item cursor_"  onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT[0].VALUE}\`)>
+               <img src=${g.GC_COST_PICTUE[0].VALUE} />
+               <div class="title-label">${g.GC_COST_NAME[0].VALUE}</div>
             </div>
           `
             })

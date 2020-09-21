@@ -125,7 +125,7 @@ const EmployeeOption = (function () {
       submit(formValue[dataset.type])
     })
     $('.home').click(()=>{
-      console.log('home.html')
+      console.log('http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit')
       window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
     })
     $('.close-icon').click(() => {
