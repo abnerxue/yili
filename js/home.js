@@ -59,7 +59,7 @@ const Home = (function () {
             w.forEach(g => {
               welfareDirectElement += `
              <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME[0].VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL[0].VALUE}\`)">
-                <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
+                <img src=${g.GC_EYWF_FUNC_PICTUE[0].VALUE} />
                 <div class="title-label">${g.GC_EYWF_FUNC_NAME[0].VALUE}</div>
                 <div class="desc">${g.GC_EYWF_FUNC_DESCR[0].VALUE}</div>
               </div>
