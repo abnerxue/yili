@@ -124,7 +124,10 @@ const EmployeeOption = (function () {
       const dataset = e.target.dataset
       submit(formValue[dataset.type])
     })
-
+    $('.home').click(()=>{
+      console.log('home.html')
+      window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+    })
     $('.close-icon').click(() => {
       $('.mask').remove()
       $('.birthday-img-wrapper').remove()
@@ -139,9 +142,9 @@ const EmployeeOption = (function () {
     }
     return null;
  }
- 
+
   function init() {
-    // loadElement()
+
     isShowBirthdayImg()
     getData()
    

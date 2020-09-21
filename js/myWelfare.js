@@ -34,7 +34,10 @@ window.onload = function () {
     )
     getDetail()
  
-
+    $('.home').click(()=>{
+      console.log('home.html')
+      window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+    })
 }
 function getDetail(){
          // 真实接口数据
