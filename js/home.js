@@ -2,31 +2,29 @@ const Home = (function () {
   function initInfo() {
     // 真实接口数据
     console.log(111)
-    $.ajax({
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        "access-control-allow-credentials": "true",
-      },
-      url: 'http://10.60.143.33:8001/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetHomeInfo',
-      contentType:'text/plain',
-      type:'GET',
-      success: Response => { 
-        console.log(Response)
-        let res=JSON.parse(Response)
-        console.log(res.root)
-        console.log(res.root.responsedata)
-        if (res.root.responsedata.RET_CODE === 0) {
+    request(
+      '/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetHomeInfo',
+      null,
+      'GET',
+      res => {
+        // console.log(Response)
+        // let res = JSON.parse(Response)
+        // console.log(res.root)
+        // console.log(res.root.responsedata)
+        // if (res.root.responsedata.RET_CODE === 0) {
           console.log(res)
-          const [data] = res.root.responsedata.data
-         
-           $('.employee-name').append(data.NAME[0].VALUE)
+          const [data] = res
+
+          $('.employee-name').append(data.NAME[0].VALUE)
           $('.work-day').append(data.GC_WORK_DAYS[0].VALUE)
-          
+
           $('.account-info').append(data.EMPLID[0].VALUE)
-         
+
           $('.phone').append(data.MOBILE_PHONE[0].VALUE)
           $('.position').append(data.GC_POSITION_DESCR[0].VALUE)
-          $('.avatar-img-wrapper').append(`<img src=${data.EMPLOYEE_PHOTO.VALUE} class='avatar-img'/>`)
+          $('.avatar-img-wrapper').append(
+            `<img src=${data.EMPLOYEE_PHOTO[0].VALUE} class='avatar-img'/>`
+          )
           if (data.GC_TODO_NUM.VALUE && Number(data.GC_TODO_NUM.VALUE) !== 0) {
             $('.welfare-count').append(data.GC_TODO_NUM.VALUE)
             $('.welfare-count').bind('click', () => {
@@ -35,8 +33,11 @@ const Home = (function () {
           } else {
             $('.welfare-count').hide()
           }
-          $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
-          $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
+          
+          $('.integral-img').css('width',data.GC_Y_SUM_POITS[0].VALUE===0?'0px':(data.GC_Y_SUM_POITS[0].VALUE/100).toFixed(2))
+          $('.money-img').css('width',data.GC_Y_SUM_POITS[0].VALUE===0?'0px':(data.GC_Y_SUM_POITS[0].VALUE/100).toFixed(2))
+          $('.integral').append(data.GC_Y_SUM_POITS[0].VALUE)
+          $('.cash-value').append(data.GC_Y_SUM_AMT[0].VALUE)
           $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
           $('.container-wrapper').css(
             'background',
@@ -45,6 +46,8 @@ const Home = (function () {
 
           if (data.GC_EYWF_FUNC.length <= 3) {
             $('.welfare-swiper-item').hide()
+            $('.button-pre').hide()
+            $('.button-next').hide()
           }
 
           const welfareDirect = $('.welfare-direct')
@@ -55,12 +58,19 @@ const Home = (function () {
             welfareDirectElement += '<div class="swiper-slide">'
             w.forEach(g => {
               welfareDirectElement += `
-            <div class="welfare-item" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_NAME.VALUE}\`)">
-              <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
-              <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
-              <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
-            </div>
-        `
+              /**
+               * anonymouse class.
+               *
+               * @author	Unknown
+               * @since	v0.0.1
+               * @version	v1.0.0	Monday, September 21st, 2020.
+               */
+              <div class="welfare-item" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL[0].VALUE}\`)">
+                <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
+                <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
+                <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
+              </div>
+            `
             })
             welfareDirectElement += '</div>'
           })
@@ -83,6 +93,8 @@ const Home = (function () {
           })
           if (data.GC_EYWF_POLY.length <= 10) {
             $('.welfare-swiper-item2').hide()
+            $('.button-pre').hide()
+            $('.button-next').hide()
           }
 
           birthdayWelfare.append(birthdayWelfareElement)
@@ -92,28 +104,23 @@ const Home = (function () {
           data.GC_EYWF_LIST.forEach(g => {
             const color = g.GC_EYWF_TD_COLOR.VALUE
             welfareListElement += `
-        <li class="li">
-          <span class="circle" style=background-color:${color}></span>
-          <span class="time" style=color:${color}>${g.GC_EYWF_TD_DATE.VALUE}</span>
-          <span class="info" style=color:${color}>${g.GC_EYWF_TD_DESCR.VALUE}</span>
-        </li>
-      `
+              <li class="li">
+                <span class="circle" style=background-color:${color}></span>
+                <span class="time" style=color:${color}>${g.GC_EYWF_TD_DATE.VALUE}</span>
+                <span class="info" style=color:${color}>${g.GC_EYWF_TD_DESCR.VALUE}</span>
+              </li>
+            `
           })
           welfareList.append(welfareListElement)
-        }
+        },
 
         // console.log(res)
-      },
-      error:err=>{
+      // },
+      err => {
         console.log(err)
       }
-    })
+    )
   }
-
-
-
-
-
 
   function initSwiper() {
     new Swiper('.swiper-container', {
@@ -144,14 +151,26 @@ const Home = (function () {
       window.location.href = 'employeeOptionalPayment.html'
     })
 
+    $('.mask').click(() => {
+      hideModal()
+    })
+  }
 
+  // 弹窗,使用:showModal()
+  function showModal() {
+    $('.modal').show()
+    $('.mask').show()
+  }
+
+  function hideModal() {
+    $('.modal').hide()
+    $('.mask').hide()
   }
 
   function init() {
     initSwiper()
     initInfo()
     addEvent()
-
   }
 
   return {
@@ -166,14 +185,9 @@ function handleGo(value) {
   console.log(value)
   // requset xx
 }
-// function handleShow(val){
-//   console.log(val)
-//      layer.open({
-//         type: 1,
-//         title: ['福利政策', 'font-size:18px;'],
-//         area: ['820px', '440px'], //宽高
-//         shadeClose: true,
-//         content: val
-//       })
-//     }
-
+function handleShow(val){
+  console.log(val)
+  $('.modal').append(val)
+  $('.modal').show()
+  $('.mask').show()
+    }

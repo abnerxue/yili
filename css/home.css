@@ -194,7 +194,7 @@
 
 .integral-container .item .cash-value {
   color: #ff9b0b;
-  margin-left: 122px;
+  margin-left: 30px;
 }
 
 .integral-container .item .desc {
@@ -434,4 +434,28 @@
 
 .green {
   color: #58b530;
+}
+
+
+.modal {
+  min-width: 350px;
+  min-height: 200px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  left: 50%;
+  display: none;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.45);
 }

@@ -1,17 +1,19 @@
 const WelfareOveriew = (function () {
   function init() {
     const activeWrapper = $('.active-wrapper-container')
-    const id= getQuery(EMPLID)
+    const id= getQuery('EMPLID')
       // 真实接口数据
   request(
-    '/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetEventList',
-    {
-      EMPLID: id,
+    '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetEventList',
+    // {
+    //   EMPLID: id,
      
-    },
+    // },
+    null,
+    'GET',
     data => {
-      let activeWrapperElement = '',
-     const welfareOverviewDatas=data
+      let activeWrapperElement = ''
+      let welfareOverviewDatas=data
       welfareOverviewDatas.forEach(w => {
         activeWrapperElement += `
           <div class="active-wrapper" >
@@ -38,7 +40,7 @@ const WelfareOveriew = (function () {
 })()
  function handleGo(GC_EYWF_EVNT_SEQ,GC_JD_EVNT_NBR){
    console.log(GC_EYWF_EVNT_SEQ,GC_JD_EVNT_NBR)
-    const id=getQuery(EMPLID)
+    const id=getQuery('EMPLID')
       request('WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetEventUrl',{
         GC_EYWF_EVNT_SEQ:GC_EYWF_EVNT_SEQ,
         GC_JD_EVNT_NBR:GC_JD_EVNT_NBR,

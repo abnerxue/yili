@@ -7,34 +7,37 @@ const EmployeeOption = (function () {
 
   // 真实接口数据,开启后删除loadElement
   function getData() {
-        const id=getQuery(EMPLID)
+        const id=getQuery('EMPLID')
       request(
         '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetChoosetWfData',
         {
           EMPLID: id
         },
+        'GET',
         jsonData => {
           console.log('data', jsonData)
           const welfareContainer = $('.welfare-container')
           let contentElement = ''
           const [realData] = jsonData
+          console.log(realData)
+          console.log( realData[0])
           prdId = realData.GC_MY_EYWF_IF[0].GC_CAL_PRD_ID.VALUE
           realData.GC_MY_EYWF_IF.forEach(d => {
             contentElement += `
               <div class='welfare-info'>
                 <div class="pic">
-                  <img src=${d.GC_COST_PICTUE.VALUE} alt=''/>
+                  <img src=${d.GC_COST_PICTUE[0].VALUE} alt=''/>
                   <div class="desc">
-                    ${d.GC_COST_NAME.VALUE}
+                    ${d.GC_COST_NAME[0].VALUE}
                   </div>
                 </div>
                 <div class='right-content'>
-                  <p class="row"><span class="lable">${d.GC_COST_DESCR.VALUE}</p>
-                  <p class=${d.GC_EYWF_NCHOSE_AMT.VALUE === '0' ? 'hide' : 'row'}><span class="lable">${
-              d.GC_EYWF_NCHOSE_AMT.VALUE
+                  <p class="row"><span class="lable">${d.GC_COST_DESCR[0].VALUE}</p>
+                  <p class=${d.GC_EYWF_NCHOSE_AMT[0].VALUE === '0' ? 'hide' : 'row'}><span class="lable">${
+              d.GC_EYWF_NCHOSE_AMT[0].VALUE
             }，</span><span>将以${d.GC_EYWF_NCHOSE_DESCR.VALUE}发放</span></p>
                   <p class="row"><span class="lable">${
-                    d.GC_EYWF_CHOSE_AMT.VALUE
+                    d.GC_EYWF_CHOSE_AMT[0].VALUE
                   }，</span><span>请选择您希望的领取方法</span></p>
                   </div>
               </div>
@@ -45,25 +48,25 @@ const EmployeeOption = (function () {
                 <div>
                   <input
                     class='select-value' name=${
-                      'select-value' + d.GC_COST_NAME.VALUE
-                    } type='radio' class='radio-input' id=${`select-value${d.GC_COST_NAME.VALUE}_${g.GC_EYWF_C_TYPE.VALUE}`} value=${
-                d.GC_COST_NAME.VALUE + '_' + g.GC_EYWF_C_TYPE.VALUE
+                      'select-value' + d.GC_COST_NAME[0].VALUE
+                    } type='radio' class='radio-input' id=${`select-value${d.GC_COST_NAME[0].VALUE}_${g.GC_EYWF_C_TYPE[0].VALUE}`} value=${
+                d.GC_COST_NAME[0].VALUE + '_' + g.GC_EYWF_C_TYPE[0].VALUE
               }></input>
-                  <label for=${`select-value${d.GC_COST_NAME.VALUE}_${g.GC_EYWF_C_TYPE.VALUE}`} value=${
-                d.GC_COST_NAME.VALUE + g.GC_EYWF_C_TYPE.VALUE
+                  <label for=${`select-value${d.GC_COST_NAME[0].VALUE}_${g.GC_EYWF_C_TYPE[0].VALUE}`} value=${
+                d.GC_COST_NAME[0].VALUE + g.GC_EYWF_C_TYPE[0].VALUE
               }></label>
-                  <label class='type-desc' for=${`select-value${d.GC_COST_NAME.VALUE}_${g.GC_EYWF_C_TYPE.VALUE}`} value=${
-                d.GC_COST_NAME.VALUE + g.GC_EYWF_C_TYPE.VALUE
-              } class="select-value">${g.GC_EYWF_C_TYPE_DESCR.VALUE}</label>
+                  <label class='type-desc' for=${`select-value${d.GC_COST_NAME[0].VALUE}_${g.GC_EYWF_C_TYPE[0].VALUE}`} value=${
+                d.GC_COST_NAME[0].VALUE + g.GC_EYWF_C_TYPE[0].VALUE
+              } class="select-value">${g.GC_EYWF_C_TYPE_DESCR[0].VALUE}</label>
                 </div>
                 <div>
-                 <span class='value'>${g.GC_EYWF_C_TYPE_AMT.VALUE}</span>
+                 <span class='value'>${g.GC_EYWF_C_TYPE_AMT[0].VALUE}</span>
                 </div>
                 </div>
-                <div class='other-desc'>${g.GC_EYWF_C_TYPE_COMMENT.VALUE}</div>
+                <div class='other-desc'>${g.GC_EYWF_C_TYPE_COMMENT[0].VALUE}</div>
               </div>`
             })
-            contentElement += `<div class="confirm-btn" data-type=${d.GC_COST_NAME.VALUE}>确认</div>`
+            contentElement += `<div class="confirm-btn" data-type=${d.GC_COST_NAME[0].VALUE}>确认</div>`
           })
           welfareContainer.html(contentElement)
         }
@@ -72,21 +75,14 @@ const EmployeeOption = (function () {
   }
 
   function isShowBirthdayImg() {
-    const [birthday] = birthdayDatas
-    if (birthday.GC_WISH_FG.VALUE === 'Y') {
-      $('.receive').append(
-        `<div class='birthday-img-wrapper'><img src='../assets/employeeOptionalPayment/GC_EYWF_BIRTHDAY_OX.png' class='birthday-img'/>
-             <img src='../assets/employeeOptionalPayment/GC_EYWF_GUAN_BI.png' class='close-icon'></img>
-           </div>`
-      )
-      $('.content').append("<div class='mask'/>")
-    }
-     const id = getQuery(EMPLID)
+   
+     const id = getQuery('EMPLID')
     request(
       '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetWishPicture',
       {
         EMPLID: id
       },
+      'GET',
       birthdayDatas => {
         const [birthday] = birthdayDatas
         if (birthday.GC_WISH_FG.VALUE === 'Y') {
@@ -102,7 +98,7 @@ const EmployeeOption = (function () {
   }
 
   function submit(type) {
-    const id=getQuery(EMPLID)
+    const id=getQuery('EMPLID')
     request(
       '/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData',
       {
@@ -145,11 +141,11 @@ const EmployeeOption = (function () {
  }
  
   function init() {
-    loadElement()
+    // loadElement()
     isShowBirthdayImg()
     getData()
    
-    getQuery(name)
+   
   }
 
   return {
