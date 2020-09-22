@@ -15,15 +15,15 @@ const Home = (function () {
           console.log(res)
           const [data] = res
 
-          $('.employee-name').append(data.NAME[0].VALUE)
-          $('.work-day').append(data.GC_WORK_DAYS[0].VALUE)
+          $('.employee-name').append(data.NAME.VALUE)
+          $('.work-day').append(data.GC_WORK_DAYS.VALUE)
 
-          $('.account-info').append(data.EMPLID[0].VALUE)
+          $('.account-info').append(data.EMPLID.VALUE)
 
-          $('.phone').append(data.MOBILE_PHONE[0].VALUE)
-          $('.position').append(data.GC_POSITION_DESCR[0].VALUE)
+          $('.phone').append(data.MOBILE_PHONE.VALUE)
+          $('.position').append(data.GC_POSITION_DESCR.VALUE)
           $('.avatar-img-wrapper').append(
-            `<img src=${data.EMPLOYEE_PHOTO[0].VALUE} class='avatar-img'/>`
+            `<img src=${data.EMPLOYEE_PHOTO.VALUE} class='avatar-img'/>`
           )
           if (data.GC_TODO_NUM.VALUE && Number(data.GC_TODO_NUM.VALUE) !== 0) {
             $('.welfare-count').append(data.GC_TODO_NUM.VALUE)
@@ -34,10 +34,10 @@ const Home = (function () {
             $('.welfare-count').hide()
           }
           
-          $('.integral-img').css('width',data.GC_Y_SUM_POITS[0].VALUE===0?'0px':(data.GC_Y_SUM_POITS[0].VALUE/100).toFixed(2))
-          $('.money-img').css('width',data.GC_Y_SUM_POITS[0].VALUE===0?'0px':(data.GC_Y_SUM_POITS[0].VALUE/100).toFixed(2))
-          $('.integral').append(data.GC_Y_SUM_POITS[0].VALUE)
-          $('.cash-value').append(data.GC_Y_SUM_AMT[0].VALUE)
+          $('.integral-img').css('width',data.GC_Y_SUM_POITS.VALUE===0?'0px':(data.GC_Y_SUM_POITS.VALUE/100).toFixed(2))
+          $('.money-img').css('width',data.GC_Y_SUM_POITS.VALUE===0?'0px':(data.GC_Y_SUM_POITS.VALUE/100).toFixed(2))
+          $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
+          $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
           $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
           $('.container-wrapper').css(
             'background',
@@ -58,10 +58,10 @@ const Home = (function () {
             welfareDirectElement += '<div class="swiper-slide">'
             w.forEach(g => {
               welfareDirectElement += `
-             <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME[0].VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL[0].VALUE}\`)">
-                <img src=${g.GC_EYWF_FUNC_PICTUE[0].VALUE} />
-                <div class="title-label">${g.GC_EYWF_FUNC_NAME[0].VALUE}</div>
-                <div class="desc">${g.GC_EYWF_FUNC_DESCR[0].VALUE}</div>
+             <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
+                <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
+                <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
+                <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
               </div>
             `
             })
@@ -77,9 +77,9 @@ const Home = (function () {
             birthdayWelfareElement += '<div class="swiper-slide" >'
             l.forEach(g => {
               birthdayWelfareElement += `
-            <div class="welfare-item cursor_"  onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT[0].VALUE}\`)>
-               <img src=${g.GC_COST_PICTUE[0].VALUE} />
-               <div class="title-label">${g.GC_COST_NAME[0].VALUE}</div>
+            <div class="welfare-item cursor_"  onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT.VALUE}\`)>
+               <img src=${g.GC_COST_PICTUE.VALUE} />
+               <div class="title-label">${g.GC_COST_NAME.VALUE}</div>
             </div>
           `
             })

@@ -32,7 +32,12 @@ const WelfareOveriew = (function () {
     
   $('.home').click(()=>{
     console.log('home.html')
-    window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+    console.log(window.location.host,'777')
+    console.log(window.location.port)
+    let host=window.location.host,
+        port=window.location.port
+        window.location.href='http://'+host+'/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+    // window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
   })
 
   }

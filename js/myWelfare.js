@@ -9,7 +9,7 @@ window.onload = function () {
         console.log(data)
         const overiewContentElement = $('.content')
         let content = ''
-        let realData=data[0]
+        let realData=data
         // console.log(t)
         // let temp=[]
         //  for(let i in t){
@@ -24,8 +24,8 @@ window.onload = function () {
           console.log(realData[index],realData[d],d)
           const flag = index % 2 === 1
           content += `
-            <div class=${flag ? 'right-item' : 'item'}><span class="lable">${d[0].TEXT}</span><span>${
-              d[0].VALUE
+            <div class=${flag ? 'right-item' : 'item'}><span class="lable">${d.TEXT}</span><span>${
+              d.VALUE
           }</span></div>
             `
             overiewContentElement.html(content)
@@ -35,8 +35,11 @@ window.onload = function () {
     getDetail()
  
     $('.home').click(()=>{
-      console.log('home.html')
-      window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+      let host=window.location.host,
+        port=window.location.port
+        window.location.href='http://'+host+'/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+      // console.log('home.html')
+      // window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
     })
 }
 function getDetail(){
