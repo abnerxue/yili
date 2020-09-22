@@ -1,0 +1,51 @@
+{ "root" : { "responsedata" : { "RET_CODE" : 0, "PROCESS_MSG" : "成功", "data" : [ { "EMPLID" : { "TEXT" : "福利账号", "VALUE" : "00349371" }, "NAME" : { "TEXT" : "员工姓名", "VALUE" : "小雪" }, 
+"GC_WORK_DAYS" : { "TEXT" : "在职天数", "VALUE" : "1563" }, "MOBILE_PHONE" : { "TEXT" : "手机号", "VALUE" : "12323432345" }, "GC_POSITION_DESCR" : { "TEXT" : "职位", "VALUE" : "冷饮市场部-助理媒介经理" },
+ "EMPLOYEE_PHOTO" : { "TEXT" : "员工照片", "VALUE" : "" }, 
+ "GC_TODO_NUM" : { "TEXT" : "福利待办数量", "VALUE" : "0" }, "GC_Y_SUM_POITS" : { "TEXT" : "当年累计积分", "VALUE" : "0" }, 
+ "GC_Y_SUM_POITS_DES" : { "TEXT" : "当年累计积分描述", "VALUE" : "(含伊利电子内购券)" }, "GC_Y_SUM_AMT" : { "TEXT" : "当年累计现金", "VALUE" : "0" }, "GC_Y_SUM_AMT_DES" : { "TEXT" : "当年累计现金描述", "VALUE" : " " },
+  "GC_EYWF_BG_PICTUE" : { "TEXT" : "背景图片", "VALUE" :  "" }, "GC_EYWF_FUNC" : [ { "GC_EYWF_FUNC_NAME" : { "TEXT" : "功能入口名称", "VALUE" : "我的福利" }, 
+  "GC_EYWF_FUNC_DESCR" : { "TEXT" : "功能入口描述", "VALUE" : "小伊给您派发福利" }, "GC_EYWF_FUNC_PICTUE" : { "TEXT" : "功能显示图片", "VALUE" :  "0"}, 
+  "GC_EYWF_FUNC_URL" : { "TEXT" : "福利直达跳转URL", "VALUE" : "" } }, { "GC_EYWF_FUNC_NAME" : { "TEXT" : "功能入口名称", "VALUE" : "酷兜" }, 
+  "GC_EYWF_FUNC_DESCR" : { "TEXT" : "功能入口描述", "VALUE" : "伊利团购等你来" }, "GC_EYWF_FUNC_PICTUE" : { "TEXT" : "功能显示图片", "VALUE" : "0" }, "GC_EYWF_FUNC_URL" : { "TEXT" : "福利直达跳转URL", "VALUE" : "" } },
+   { "GC_EYWF_FUNC_NAME" : { "TEXT" : "功能入口名称", "VALUE" : "伊家福礼" }, "GC_EYWF_FUNC_DESCR" : { "TEXT" : "功能入口描述", "VALUE" : "全品优惠属于你" }, "GC_EYWF_FUNC_PICTUE" : { "TEXT" : "功能显示图片", "VALUE" :"0" },
+   "GC_EYWF_FUNC_URL" : { "TEXT" : "福利直达跳转URL", "VALUE" : "" } } ], "GC_EYWF_POLY" : [ { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, 
+   "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100006" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "工作餐" }, 
+   "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :"0"  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : " " } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100010" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "高温防暑（补贴）" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100015" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "婚礼贺金" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100013" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "生日贺金" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100009" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "尔代节贺金" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100014" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "奠金" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100012" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "义务献血营养补贴" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "10011" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "人身意外伤害保险附加意外伤害医疗保险" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100007" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "女工卫生费" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100004" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "三八礼品" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "10008" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "女工生育费" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100008" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "六一礼品" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "10015" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "员工子女营养关怀补贴（发补贴部分）" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100003" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "春节福利" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100002" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "中秋节福利" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100011" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "团队活动费" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "10023" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "外派员工关怀" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "关怀性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100025" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "探亲路费" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" : }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "激励性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "100005" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "健康体检" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } }, { "GC_POLY_PAGE_TP" : { "TEXT" : "页签名称", "VALUE" : "激励性福利" }, "GC_COST_CODE" : { "TEXT" : "福利代码", "VALUE" : "10006" }, "GC_COST_NAME" : { "TEXT" : "福利名称", "VALUE" : "交通补贴" }, "GC_COST_PICTUE" : { "TEXT" : "福利图标", "VALUE" :  }, "GC_EYWL_POLY_COMMT" : { "TEXT" : "福利政策解读", "VALUE" : "
+
+" } } ], "GC_EYWF_LIST" : [ ] } ] } } }

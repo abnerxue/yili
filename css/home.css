@@ -217,7 +217,8 @@
 }
 
 .right {
-  width: 808px;
+  /* width: 808px; */
+  width: 1080px;
   margin-left: 16px;
 }
 
@@ -359,6 +360,15 @@
   cursor: pointer;
 }
 
+.welfare-container .welfare-item{
+  width: 28%;
+  margin-right: 10px;
+}
+.welfare-container .welfare-item .desc{
+   /* width:100px;
+   white-space: nowrap;
+   overflow: hidden; */
+}
 .welfare-policy-container .welfare-item {
   width: 20%;
 }

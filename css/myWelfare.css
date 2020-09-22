@@ -1,10 +1,12 @@
 .container {
   width: 1920px;
   min-width: 100px;
-  height: 880px;
+  
+  min-height: 880px ;
   background-image: url('../assets/background/GC_EYWF_CAKE_BG.png');
   background-repeat: no-repeat;
-  background-size: 1920px 1080px;
+  /* background-size: 1920px 1080px; */
+  background-size: 100% 100%;
   padding-bottom: 50px;
 }
 
@@ -66,7 +68,7 @@
 .welfare {
   width: 1568px;
   padding: 0 24px;
-  height: 820px;
+  height: auto;
   background-color: #fff;
   margin: 30px auto 0;
 }
@@ -107,6 +109,7 @@
 }
 
 .detail-content .right-content{
+  
   width: 270px;
   text-align: right;
 }
@@ -124,6 +127,7 @@
 }
 
 .detail-content {
+ 
   margin: 0 281px 0 204px;
   font-size: 18px;
   display: flex;

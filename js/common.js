@@ -12,10 +12,10 @@ function request(url, params, type,successCallback) {
     type:type,
     success: Response => {
       console.log(Response)
-      //  console.log(typeof(Response))
+       console.log(typeof(Response))
       //  console.log(Response.replaceAll("\r|\n", ""))
       let res = JSON.parse(Response)
-      console.log(res)
+      // console.log(res)
       if (res.root.responsedata.RET_CODE === 0) { 
         successCallback(res.root.responsedata.data)
       }

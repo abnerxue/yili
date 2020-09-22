@@ -33,7 +33,7 @@ const EmployeeOption = (function () {
                 </div>
                 <div class='right-content'>
                   <p class="row"><span class="lable">${d.GC_COST_DESCR.VALUE}</p>
-                  <p class=${d.GC_EYWF_NCHOSE_AMT.VALUE === 0 ? 'hide' : 'row'}><span class="lable">${
+                  <p class=${d.GC_EYWF_NCHOSE_AMT.VALUE === '0元'? 'hide' : 'row'}><span class="lable">${
               d.GC_EYWF_NCHOSE_AMT.VALUE
             }，</span><span>将以${d.GC_EYWF_NCHOSE_DESCR.VALUE}发放</span></p>
                   <p class="row"><span class="lable">${
@@ -66,7 +66,7 @@ const EmployeeOption = (function () {
                 <div class='other-desc'>${g.GC_EYWF_C_TYPE_COMMENT.VALUE}</div>
               </div>`
             })
-            contentElement += `<div class="confirm-btn" data-type=${d.GC_COST_NAME.VALUE}>确认</div>`
+            contentElement += `<div class="confirm-btn cursor_" data-type=${d.GC_COST_NAME.VALUE} >确认</div>`
           })
           welfareContainer.html(contentElement)
         }
@@ -123,13 +123,14 @@ const EmployeeOption = (function () {
     $('.confirm-btn').click(e => {
       const dataset = e.target.dataset
       submit(formValue[dataset.type])
+      console.log(22)
+      console.log(formValue[dataset.type])
     })
     $('.home').click(()=>{
       let host=window.location.host,
         port=window.location.port
      window.location.href='http://'+host+'/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
-      // console.log('http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit')
-      // window.location.href='http://10.60.143.33:8001/psp/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit'
+      
     })
     $('.close-icon').click(() => {
       $('.mask').remove()
@@ -147,7 +148,7 @@ const EmployeeOption = (function () {
  }
 
   function init() {
-
+    addEvent() 
     isShowBirthdayImg()
     getData()
    

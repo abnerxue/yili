@@ -7,108 +7,111 @@ const Home = (function () {
       null,
       'GET',
       res => {
-        // console.log(Response)
-        // let res = JSON.parse(Response)
-        // console.log(res.root)
-        // console.log(res.root.responsedata)
-        // if (res.root.responsedata.RET_CODE === 0) {
-          console.log(res)
-          const [data] = res
 
-          $('.employee-name').append(data.NAME.VALUE)
-          $('.work-day').append(data.GC_WORK_DAYS.VALUE)
+        console.log(res)
+        const [data] = res
 
-          $('.account-info').append(data.EMPLID.VALUE)
+        $('.employee-name').append(data.NAME.VALUE)
+        $('.work-day').append(data.GC_WORK_DAYS.VALUE)
 
-          $('.phone').append(data.MOBILE_PHONE.VALUE)
-          $('.position').append(data.GC_POSITION_DESCR.VALUE)
-          $('.avatar-img-wrapper').append(
-            `<img src=${data.EMPLOYEE_PHOTO.VALUE} class='avatar-img'/>`
-          )
-          if (data.GC_TODO_NUM.VALUE && Number(data.GC_TODO_NUM.VALUE) !== 0) {
-            $('.welfare-count').append(data.GC_TODO_NUM.VALUE)
-            $('.welfare-count').bind('click', () => {
-              window.location.href = 'employeeOptionalPayment.html?EMPLID=' + data.EMPLID.VALUE
-            })
-          } else {
-            $('.welfare-count').hide()
-          }
-          
-          $('.integral-img').css('width',data.GC_Y_SUM_POITS.VALUE===0?'0px':(data.GC_Y_SUM_POITS.VALUE/100).toFixed(2))
-          $('.money-img').css('width',data.GC_Y_SUM_POITS.VALUE===0?'0px':(data.GC_Y_SUM_POITS.VALUE/100).toFixed(2))
-          $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
-          $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
-          $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
-          $('.container-wrapper').css(
-            'background',
-            `url(${data.GC_EYWF_BG_PICTUE.VALUE}) 100% 100%  no-repeat`
-          )
+        $('.account-info').append(data.EMPLID.VALUE)
 
-          if (data.GC_EYWF_FUNC.length <= 3) {
-            $('.welfare-swiper-item').hide()
-            $('.button-pre').hide()
-            $('.button-next').hide()
-          }
-
-          const welfareDirect = $('.welfare-direct')
-          let welfareDirectElement = ''
-          // 数据分组
-          const newEywfFuncList = chunk(data.GC_EYWF_FUNC, 3)
-          newEywfFuncList.forEach(w => {
-            welfareDirectElement += '<div class="swiper-slide">'
-            w.forEach(g => {
-              welfareDirectElement += `
-             <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
-                <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
-                <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
-                <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
-              </div>
-            `
-            })
-            welfareDirectElement += '</div>'
+        $('.phone').append(data.MOBILE_PHONE.VALUE)
+        $('.position').append(data.GC_POSITION_DESCR.VALUE)
+        $('.avatar-img-wrapper').append(
+          `<img src=${data.EMPLOYEE_PHOTO.VALUE} class='avatar-img'/>`
+        )
+        if (data.GC_TODO_NUM.VALUE && Number(data.GC_TODO_NUM.VALUE) !== 0) {
+          $('.welfare-count').append(data.GC_TODO_NUM.VALUE)
+          $('.welfare-count').bind('click', () => {
+            window.location.href = 'employeeOptionalPayment.html?EMPLID=' + data.EMPLID.VALUE
           })
-          welfareDirect.append(welfareDirectElement)
+        } else {
+          $('.welfare-count').hide()
+        }
 
-          const birthdayWelfare = $('.birthday-welfare')
-          let birthdayWelfareElement = ''
-          console.log(data.GC_EYWF_POLY,'data.GC_EYWF_POLY')
-          const list = chunk(data.GC_EYWF_POLY, 10)
-          list.forEach(l => {
-            birthdayWelfareElement += '<div class="swiper-slide" >'
-            l.forEach(g => {
-              birthdayWelfareElement += `
+        $('.integral-img').css('width', data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2))
+        $('.money-img').css('width', data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2))
+        $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
+        $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
+        $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
+        $('.container-wrapper').css(
+          'background',
+          `url(${data.GC_EYWF_BG_PICTUE.VALUE}) 100% 100%  no-repeat`
+        )
+
+        if (data.GC_EYWF_FUNC.length <= 3) {
+          $('.welfare-swiper-item').hide()
+          $('.button-pre').hide()
+          $('.button-next').hide()
+        }
+        const welfareDirect = $('.welfare-direct')
+        let welfareDirectElement = ''
+        // 数据分组
+        const newEywfFuncList = chunk(data.GC_EYWF_FUNC, 3)
+        console.log(newEywfFuncList)
+        newEywfFuncList.forEach(w => {
+          welfareDirectElement += '<div class="swiper-slide">'
+          w.forEach(g => {
+            welfareDirectElement += `
+               <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
+                  <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
+                  <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
+                  <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
+                </div>
+              `
+          })
+          welfareDirectElement += '</div>'
+        })
+        console.log(welfareDirectElement)
+        welfareDirect.append(welfareDirectElement)
+
+
+
+
+        const birthdayWelfare = $('.birthday-welfare')
+        let birthdayWelfareElement = ''
+
+        const list = chunk(data.GC_EYWF_POLY, 10)
+        list.forEach(l => {
+          birthdayWelfareElement += '<div class="swiper-slide" >'
+          l.forEach(g => {
+            birthdayWelfareElement += `
             <div class="welfare-item cursor_"  onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT.VALUE}\`)>
                <img src=${g.GC_COST_PICTUE.VALUE} />
                <div class="title-label">${g.GC_COST_NAME.VALUE}</div>
             </div>
           `
-            })
-            birthdayWelfareElement += '</div>'
           })
-          if (data.GC_EYWF_POLY.length <= 10) {
-            $('.welfare-swiper-item2').hide()
-            $('.button-pre').hide()
-            $('.button-next').hide()
-          }
+          birthdayWelfareElement += '</div>'
+        })
+        if (data.GC_EYWF_POLY.length <= 10) {
+          $('.welfare-swiper-item2').hide()
+          $('.button-pre').hide()
+          $('.button-next').hide()
+        }
 
-          birthdayWelfare.append(birthdayWelfareElement)
 
-          const welfareList = $('.welfare-list')
-          let welfareListElement = ''
-          data.GC_EYWF_LIST.forEach(g => {
-            const color = g.GC_EYWF_TD_COLOR.VALUE
-            welfareListElement += `
+
+        console.log(birthdayWelfareElement)
+        birthdayWelfare.append(birthdayWelfareElement)
+
+        const welfareList = $('.welfare-list')
+        let welfareListElement = ''
+        data.GC_EYWF_LIST.forEach(g => {
+          const color = g.GC_EYWF_TD_COLOR.VALUE
+          welfareListElement += `
               <li class="li">
                 <span class="circle" style=background-color:${color}></span>
                 <span class="time" style=color:${color}>${g.GC_EYWF_TD_DATE.VALUE}</span>
                 <span class="info" style=color:${color}>${g.GC_EYWF_TD_DESCR.VALUE}</span>
               </li>
             `
-          })
-          welfareList.append(welfareListElement)
-        },
+        })
+        welfareList.append(welfareListElement)
+      },
 
-        // console.log(res)
+      // console.log(res)
       // },
       err => {
         console.log(err)
@@ -118,7 +121,7 @@ const Home = (function () {
 
   function initSwiper() {
     new Swiper('.swiper-container', {
-      spaceBetween: 30,
+      spaceBetween: 3,
       // 自动播放
       // autoplay: {
       //   delay: 2500,
@@ -179,9 +182,9 @@ function handleGo(value) {
   console.log(value)
   // requset xx
 }
-function handleShow(val){
+function handleShow(val) {
   console.log(val)
-  $('.modal').append(val)
+  $('.modal').html(val)
   $('.modal').show()
   $('.mask').show()
-    }
+}
