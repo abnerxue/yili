@@ -1,19 +1,24 @@
-
 .container{
-  background-image: url('../assets/background/GC_EYWF_CAKE_BG.png');
+
+  background-image: url('%image(GC_EYWF_CKBG_PNG)');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 1920px;
+  width: 100%;
 }
 
 .content {
-  width: 1920px;
-  background-size: 1920px 1120px;
-  padding-bottom: 50px;
+  
+  width: 100%;
+  background-size: 100% 100%;
+  
 }
 
 
 .content .header {
+background-image: url('%image(GC_EYWF_HEADER_PNG)');
+background-repeat: no-repeat;
+  /* background-size: 1920px 1080px; */
+  background-size: 100% 100%;
   width: 100%;
   background-color: #ff4232;
   height: 68px;
@@ -75,6 +80,8 @@
   background-color: #fff;
   margin: 30px auto 0;
   position: relative;
+height:850px;
+overflow:auto;
 }
 .title {
   color: #ff9a09;
@@ -165,7 +172,7 @@
   color: #fff;
   text-align: center;
   line-height: 28px;
-  background-image: url(../assets/employeeOptionalPayment/GC_EYWF_MOON_BORDER.png);
+  background-image: url(%image(GC_EYWF_MNBDR_PNG));
   background-size: 100% 100%;
 }
 

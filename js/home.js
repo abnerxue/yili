@@ -1,16 +1,15 @@
 const Home = (function () {
+  let homeDataAll = {}
+
   function initInfo() {
     // 真实接口数据
-    console.log(111)
     request(
       '/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_GetHomeInfo',
       null,
       'GET',
       res => {
-
-        console.log(res)
         const [data] = res
-
+        homeDataAll = data
         $('.employee-name').append(data.NAME.VALUE)
         $('.work-day').append(data.GC_WORK_DAYS.VALUE)
 
@@ -30,20 +29,23 @@ const Home = (function () {
           $('.welfare-count').hide()
         }
 
-        $('.integral-img').css('width', data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2))
-        $('.money-img').css('width', data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2))
+        $('.integral-img').css(
+          'width',
+          data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2)
+        )
+        $('.money-img').css(
+          'width',
+          data.GC_Y_SUM_POITS.VALUE === 0 ? '0px' : (data.GC_Y_SUM_POITS.VALUE / 100).toFixed(2)
+        )
         $('.integral').append(data.GC_Y_SUM_POITS.VALUE)
         $('.cash-value').append(data.GC_Y_SUM_AMT.VALUE)
         $('.item-weak-desc').append(data.GC_Y_SUM_POITS_DES.VALUE)
-        $('.container-wrapper').css(
-          'background',
-          `url(${data.GC_EYWF_BG_PICTUE.VALUE}) 100% 100%  no-repeat`
-        )
-
+        // $('.container-wrapper').css('background-image', `url(${data.GC_EYWF_BG_PICTUE.VALUE})`)
+        $('.container-wrapper').css('background-size', '100% 100%')
         if (data.GC_EYWF_FUNC.length <= 3) {
           $('.welfare-swiper-item').hide()
-          $('.button-pre').hide()
-          $('.button-next').hide()
+          $('.welfare-direct-pre').hide()
+          $('.welfare-direct-next').hide()
         }
         const welfareDirect = $('.welfare-direct')
         let welfareDirectElement = ''
@@ -54,7 +56,7 @@ const Home = (function () {
           welfareDirectElement += '<div class="swiper-slide">'
           w.forEach(g => {
             welfareDirectElement += `
-               <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME.VALUE}  onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
+               <div class="welfare-item cursor_" data-name=${g.GC_EYWF_FUNC_NAME.VALUE} onclick="handleGo(\`${g.GC_EYWF_FUNC_URL.VALUE}\`)">
                   <img src=${g.GC_EYWF_FUNC_PICTUE.VALUE} />
                   <div class="title-label">${g.GC_EYWF_FUNC_NAME.VALUE}</div>
                   <div class="desc">${g.GC_EYWF_FUNC_DESCR.VALUE}</div>
@@ -63,38 +65,9 @@ const Home = (function () {
           })
           welfareDirectElement += '</div>'
         })
-        console.log(welfareDirectElement)
         welfareDirect.append(welfareDirectElement)
 
-
-
-
-        const birthdayWelfare = $('.birthday-welfare')
-        let birthdayWelfareElement = ''
-
-        const list = chunk(data.GC_EYWF_POLY, 10)
-        list.forEach(l => {
-          birthdayWelfareElement += '<div class="swiper-slide" >'
-          l.forEach(g => {
-            birthdayWelfareElement += `
-            <div class="welfare-item cursor_"  onclick="handleShow(\`${g.GC_EYWL_POLY_COMMT.VALUE}\`)>
-               <img src=${g.GC_COST_PICTUE.VALUE} />
-               <div class="title-label">${g.GC_COST_NAME.VALUE}</div>
-            </div>
-          `
-          })
-          birthdayWelfareElement += '</div>'
-        })
-        if (data.GC_EYWF_POLY.length <= 10) {
-          $('.welfare-swiper-item2').hide()
-          $('.button-pre').hide()
-          $('.button-next').hide()
-        }
-
-
-
-        console.log(birthdayWelfareElement)
-        birthdayWelfare.append(birthdayWelfareElement)
+        renderWealList(data, $('.care-tab').text())
 
         const welfareList = $('.welfare-list')
         let welfareListElement = ''
@@ -109,10 +82,9 @@ const Home = (function () {
             `
         })
         welfareList.append(welfareListElement)
+        initSwiper()
+        addEvent()
       },
-
-      // console.log(res)
-      // },
       err => {
         console.log(err)
       }
@@ -120,6 +92,7 @@ const Home = (function () {
   }
 
   function initSwiper() {
+    console.log(8881)
     new Swiper('.swiper-container', {
       spaceBetween: 3,
       // 自动播放
@@ -151,6 +124,18 @@ const Home = (function () {
     $('.mask').click(() => {
       hideModal()
     })
+
+    $('.care-tab').click(() => {
+      $('.care-tab').addClass('active-tab')
+      $('.excitation-tab').removeClass('excitation-active-tab')
+      renderWealList(homeDataAll, $('.care-tab').text())
+    })
+
+    $('.excitation-tab').click(() => {
+      $('.excitation-tab').addClass('excitation-active-tab')
+      $('.care-tab').removeClass('active-tab').addClass('normal-tab')
+      renderWealList(homeDataAll, $('.excitation-tab').text())
+    })
   }
 
   // 弹窗,使用:showModal()
@@ -164,10 +149,50 @@ const Home = (function () {
     $('.mask').hide()
   }
 
+  function renderWealList(data, value) {
+    const birthdayWelfare = $('.birthday-welfare')
+    let birthdayWelfareElement = ''
+    const oldList = handleListAsTab(value, data.GC_EYWF_POLY)
+    const list = chunk(oldList, 10)
+    console.log(list)
+    list.forEach(l => {
+      birthdayWelfareElement += '<div class="swiper-slide" >'
+      l.forEach(g => {
+        birthdayWelfareElement += `
+            <div class="welfare-item cursor_" >
+               <img src=${g.GC_COST_PICTUE.VALUE} />
+               <div class="title-label"  title=${g.GC_COST_NAME.VALUE}>${g.GC_COST_NAME.VALUE}</div>
+            </div>
+          `
+      })
+      birthdayWelfareElement += '</div>'
+    })
+    
+    console.log(birthdayWelfareElement,'birthdayWelfareElement')
+    birthdayWelfare.html(birthdayWelfareElement)
+
+
+     console.log(oldList.length,'oldList.length')
+    if (oldList.length <= 10) {
+      $('.welfare-swiper-item2').hide()
+      $('.welfare-button-pre').hide()
+      $('.welfare-button-next').hide()
+    } else {
+      console.log(888)
+      $('.welfare-swiper-item2').show()
+      $('.welfare-button-pre').show()
+      $('.welfare-button-next').show()
+    }
+  }
+
+  function handleListAsTab(value, list) {
+    return list.filter(l => l.GC_POLY_PAGE_TP.VALUE === value)
+  }
+
   function init() {
-    initSwiper()
     initInfo()
-    addEvent()
+    // addEvent()
+    // initSwiper()
   }
 
   return {

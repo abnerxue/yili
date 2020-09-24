@@ -4,7 +4,9 @@ function request(url, params, type,successCallback) {
     
     headers:  {
       'Access-Control-Allow-Origin': '*',
-      'access-control-allow-credentials': 'true'
+      'access-control-allow-credentials': 'true',
+      // "userid":'LBY',
+      // 'pwd':'1'
     },
     url: realUrl,
     data: params,

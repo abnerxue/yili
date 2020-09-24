@@ -1,9 +1,10 @@
 .container {
+
   width: 1920px;
   min-width: 100px;
-  
-  min-height: 880px ;
-  background-image: url('../assets/background/GC_EYWF_CAKE_BG.png');
+
+  min-height: 880px;
+  background-image: url('%image(GC_EYWF_CKBG_PNG)');
   background-repeat: no-repeat;
   /* background-size: 1920px 1080px; */
   background-size: 100% 100%;
@@ -13,9 +14,14 @@
 .container .header {
   width: 100%;
   background-color: #ff4232;
+
   height: 68px;
   display: flex;
   justify-content: space-between;
+  background-image: url('%image(GC_EYWF_HEADER_PNG)');
+  background-repeat: no-repeat;
+  /* background-size: 1920px 1080px; */
+  background-size: 100% 100%;
 }
 
 .container .header .left {
@@ -66,23 +72,27 @@
   color: #ffffff;
 }
 .welfare {
+	height: 850px;
   width: 1568px;
-  padding: 0 24px;
-  height: auto;
+  padding: 0 24px 120px 24px;
+  box-sizing: border-box;
+  
   background-color: #fff;
-  margin: 30px auto 0;
+  margin: 56px auto ;
+  overflow: auto;
 }
 .overview {
   overflow: hidden;
 }
 .title {
   margin: 28px 0px 0px 28px;
-  width: 189px;
   height: 33px;
   font-size: 24px;
   font-weight: 500;
+  display: flex;
   color: #ff9a09;
   line-height: 33px;
+  align-items: center;
 }
 
 .title .title-img {
@@ -96,7 +106,12 @@
   font-size: 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.content-item {
+  margin-left: 383px;
 }
 
 .item {
@@ -108,8 +123,7 @@
   text-align: right;
 }
 
-.detail-content .right-content{
-  
+.detail-content .right-content {
   width: 270px;
   text-align: right;
 }
@@ -127,7 +141,6 @@
 }
 
 .detail-content {
- 
   margin: 0 281px 0 204px;
   font-size: 18px;
   display: flex;
@@ -135,15 +148,85 @@
   flex-wrap: wrap;
 }
 
+ .detail-content .detail-item:nth-child(1){
+  margin-left:18px;
+}
+.detail-content .detail-item:last-child{
+  margin-left:-18px;
+}
+
 .detail-content .detail-item {
   display: flex;
   margin-top: 74px;
+}
+
+
+.detail-item .left-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.welfare-name {
+  width: 100%;
+  text-align: center;
+  margin-top: 14px;
 }
 
 .detail {
   margin-top: 126px;
 }
 
-.detail-content .detail-img {
-  margin-right: 81px;
+.year-select{
+  display: flex;
+  margin-left: 48px;
+  color: #000;
+  font-size: 18px;
+  position: relative;
+}
+
+.year {
+  width: 118px;
+  height: 36px;
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.year-icon{
+  width: 35px;
+  height: 36px;
+  border: 1px solid #cccccc;
+  border-radius: 0px 2px 2px 0px;
+  border-left: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.all-year{
+  border: 1px solid #cccccc;
+  position: absolute;
+  top: 38px;
+  border-top: none;
+  width: 118px;
+  z-index: 10;
+  background-color: #fff;
+  display: none;
+}
+
+.year-item{
+  padding: 4px 6px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+
+.year-item:not(:first-child){
+  border-top: 1px solid #cccccc;
 }
