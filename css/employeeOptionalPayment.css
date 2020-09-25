@@ -76,6 +76,8 @@ background-repeat: no-repeat;
   color: #ffffff;
 }
 .receive {
+  border-radius: 5px;
+  box-shadow:2px 2px 1px 1px  #D7A35C;
   width: 1568px;
   background-color: #fff;
   margin: 56px auto 0;

@@ -73,6 +73,8 @@
   color: #ffffff;
 }
 .welfare {
+  border-radius: 5px;
+  box-shadow:2px 2px 1px 1px  #D7A35C;
 	height: 750px;
   width: 1568px;
   padding: 0 24px 10px 24px;
