@@ -46,7 +46,6 @@
 }
 
 .content .header .right {
-  
   width: 106px;
   height: 38px;
   line-height: 38px;
@@ -61,7 +60,6 @@
 }
 
 .content .header .right .home {
-
   font-size: 20px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
@@ -258,6 +256,8 @@
   padding: 0 115px;
   box-sizing: border-box;
   flex-wrap: wrap;
+  /* max-height: 300px;
+  overflow: auto; */
 }
 
 .swiper-container .button-pre {
@@ -290,6 +290,12 @@
   font-weight: 500;
   font-size: 22px;
   margin: 8px 0 6px 0;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .desc {
@@ -332,9 +338,19 @@
   margin-left: -8px;
 }
 
-.right .welfare-policy-container .title .active {
+.right .welfare-policy-container .title .active-tab {
   color: #fff;
   border-radius: 48px 0px 0px 48px;
+  background-color: #ff9a09;
+}
+
+.right .welfare-policy-container .title .normal-tab{
+  border-radius: 48px 0px 0px 48px;
+}
+
+.right .welfare-policy-container .title .excitation-active-tab{
+  color: #fff;
+  border-radius: 0 48px 48px 0;
   background-color: #ff9a09;
 }
 
@@ -344,7 +360,8 @@
   margin-top: 35px;
 }
 
-.welfare-policy-container .swiper-container .button-pre {
+.welfare-policy-container .swiper-container .button-pre,
+.swiper-container .welfare-button-pre {
   position: absolute;
   top: 120px;
   left: 32px;
@@ -352,7 +369,8 @@
   cursor: pointer;
 }
 
-.welfare-policy-container .swiper-container .button-next {
+.welfare-policy-container .swiper-container .button-next,
+.swiper-container .welfare-button-next {
   position: absolute;
   top: 120px;
   right: 40px;
@@ -360,12 +378,12 @@
   cursor: pointer;
 }
 
-.welfare-container .welfare-item{
+.welfare-container .welfare-item {
   width: 28%;
   margin-right: 10px;
 }
-.welfare-container .welfare-item .desc{
-   /* width:100px;
+.welfare-container .welfare-item .desc {
+  /* width:100px;
    white-space: nowrap;
    overflow: hidden; */
 }
@@ -375,11 +393,6 @@
 
 .welfare-policy-container .welfare-item .title-label {
   margin-top: 12px;
-}
-
-.welfare-policy-container .swiper-slide {
-  justify-content: flex-start;
-  align-items: initial;
 }
 
 .welfare-policy-container .swiper-container .swiper-pagination {
@@ -447,7 +460,6 @@
 .green {
   color: #58b530;
 }
-
 
 .modal {
   min-width: 350px;
