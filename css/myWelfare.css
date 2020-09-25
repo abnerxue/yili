@@ -1,14 +1,15 @@
 .container {
 
-  width: 1920px;
+  /* width: 1920px; */
+  width:100%;
   min-width: 100px;
 
-  min-height: 880px;
+  height: 860px;
   background-image: url('%image(GC_EYWF_CKBG_PNG)');
   background-repeat: no-repeat;
   /* background-size: 1920px 1080px; */
   background-size: 100% 100%;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .container .header {
@@ -72,7 +73,7 @@
   color: #ffffff;
 }
 .welfare {
-	height: 850px;
+	height: 750px;
   width: 1568px;
   padding: 0 24px 10px 24px;
   box-sizing: border-box;
@@ -111,7 +112,7 @@
 }
 
 .content-item {
-  margin-left: 383px;
+  margin-left: 300px;
 }
 
 .item {
@@ -146,6 +147,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-bottom: 40px;
 }
 
  .detail-content .detail-item:nth-child(1){
