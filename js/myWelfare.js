@@ -96,10 +96,11 @@ var mywelfare = function () {
       var _data = _slicedToArray(data, 1),
           realData = _data[0];
 
-      content += "\n          <div>\n              <span class=\"lable\">".concat(realData.GC_SUM_YL_E_SHOPV.TEXT, "</span><span>").concat(realData.GC_SUM_YL_E_SHOPV.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n              <span class=\"lable\">").concat(realData.GC_SUM_YL_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_YL_GOODS.VALUE, "</span>\n          </div>\n          <div>\n              <span class=\"lable\">").concat(realData.GC_SUM_E_POITS.TEXT, "</span><span>").concat(realData.GC_SUM_E_POITS.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n            <span class=\"lable\">").concat(realData.GC_SUM_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_GOODS.VALUE, "</span>\n        </div>\n        <div>\n          <span class=\"lable\">").concat(realData.GC_SUM_AMT.TEXT, "</span><span>").concat(realData.GC_SUM_AMT.VALUE, "</span>\n        </div>\n     ");
+      content += "\n          <div>\n              <span class=\"lable\">".concat(realData.GC_SUM_YL_E_SHOPV.TEXT, "</span><span>").concat(realData.GC_SUM_YL_E_SHOPV.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n              <span class=\"lable-item\">").concat(realData.GC_SUM_YL_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_YL_GOODS.VALUE, "</span>\n          </div>\n          <div>\n              <span class=\"lable\">").concat(realData.GC_SUM_E_POITS.TEXT, "</span><span>").concat(realData.GC_SUM_E_POITS.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n            <span class=\"lable-item\">").concat(realData.GC_SUM_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_GOODS.VALUE, "</span>\n        </div>\n        <div>\n          <span class=\"lable\">").concat(realData.GC_SUM_AMT.TEXT, "</span><span>").concat(realData.GC_SUM_AMT.VALUE, "</span>\n        </div>\n     ");
       overiewContentElement.html(content);
       console.log(realData);
-    }); // }
+    }); 
+    // }
     // )
     // 真实接口数据
 
@@ -113,8 +114,8 @@ var mywelfare = function () {
       var detailContent = $('.detail-content');
       var detailDataElement = '';
 
-      var _mywelfareDataDetailD = data,
-          _mywelfareDataDetailD2 = _slicedToArray(_mywelfareDataDetailD, 1),
+      var _mywelfareDataDetailD = mywelfareDataDetailData,
+          _mywelfareDataDetailD2 = _slicedToArray(data, 1),
           realDetailData = _mywelfareDataDetailD2[0];
 
       realDetailData.GC_MY_EYWF_IF.forEach(function (d) {
@@ -169,18 +170,23 @@ var mywelfare = function () {
     }, 'GET', function (data) {
       var detailContent = $('.detail-content');
       var detailDataElement = '';
+     
 
       var _data2 = _slicedToArray(data, 1),
           realDetailData = _data2[0];
-
-      realDetailData.GC_MY_EYWF_IF.forEach(function (d) {
-        console.log(d, 'dddddd');
-        detailDataElement += "<div class=\"detail-item\">\n              <div class=\"left-img\">\n              <img src=".concat(d.GC_COST_PICTUE.VALUE, "  class=\"detail-img\" />\n              <div class=\"welfare-name\">").concat(d.GC_COST_NAME.VALUE, "</div>\n              </div>\n              <div class=\"right-content\">\n          ");
-        d.GC_MY_EYWF_DETAIL.forEach(function (c) {
-          detailDataElement += "\n              <p><span class=\"lable\">".concat(c.GC_ENTITY_CASH_DESC.VALUE, "</span><span>").concat(c.GC_COST_ENTY_NUM.VALUE, "</span></p>\n             ");
-        });
-        detailDataElement += '</div></div>';
-      });
+           if(realDetailData.GC_MY_EYWF_IF.length===0){
+            detailDataElement='<span class=\"noWel\">\n当前年份无福利信息</span>'
+           }else{
+            realDetailData.GC_MY_EYWF_IF.forEach(function (d) {
+              console.log(d, 'dddddd');
+              detailDataElement += "<div class=\"detail-item\">\n              <div class=\"left-img\">\n              <img src=".concat(d.GC_COST_PICTUE.VALUE, "  class=\"detail-img\" />\n              <div class=\"welfare-name\">").concat(d.GC_COST_NAME.VALUE, "</div>\n              </div>\n              <div class=\"right-content\">\n          ");
+              d.GC_MY_EYWF_DETAIL.forEach(function (c) {
+                detailDataElement += "\n              <p><span class=\"lable\">".concat(c.GC_ENTITY_CASH_DESC.VALUE, "</span><span>").concat(c.GC_COST_ENTY_NUM.VALUE, "</span></p>\n             ");
+              });
+              detailDataElement += '</div></div>';
+            });
+           }
+    
       detailContent.html(detailDataElement);
     });
   }

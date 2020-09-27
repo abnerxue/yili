@@ -12,7 +12,9 @@
   background-size: 100% 100%;
   
 }
-
+.welfare-container{
+  width: 650px;
+}
 
 .content .header {
 background-image: url('%image(GC_EYWF_HEADER_PNG)');
@@ -82,7 +84,7 @@ background-repeat: no-repeat;
   background-color: #fff;
   margin: 56px auto 0;
   position: relative;
-height:780px;
+height:740px;
 overflow:auto;
 }
 .title {
@@ -150,7 +152,10 @@ overflow:auto;
 .type-item .select-value {
   font-size: 18px;
 }
-
+.value_{
+  width:100px;
+  text-align: left;
+}
 .type-item .type-desc {
   font-size: 18px;
 }
