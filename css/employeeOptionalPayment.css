@@ -15,7 +15,28 @@
 .welfare-container{
   width: 650px;
 }
-
+.noWel_{
+  top: 100px;
+  left: 120px;
+  position: relative;
+  display: none; 
+  width: 650px;
+  margin:0 auto;
+  background-image: url('../assets/background/no_wel.png');
+  background-repeat: no-repeat;
+ 
+  height: 350px;
+}
+.noWel_p{
+  position: absolute;
+  bottom: 20px;
+  display: none;
+  text-align: center;
+  font-size: 24px;
+  color: #999999;
+  bottom: 0px;
+  left: 30px;
+}
 .content .header {
 background-image: url('%image(GC_EYWF_HEADER_PNG)');
 background-repeat: no-repeat;
@@ -141,6 +162,7 @@ overflow:auto;
 .confirm-btn {
   margin-left: 123px;
   margin-top: 29px;
+ 
 }
 
 .type-item {
@@ -179,7 +201,15 @@ overflow:auto;
   color: #fff;
   text-align: center;
   line-height: 28px;
-  background-image: url(%image(GC_EYWF_MNBDR_PNG));
+  /* background:linear-gradient(to bottom#FAC5A7,#FEA776) !important; */
+  background-image: url(../assets/employeeOptionalPayment/GC_EYWF_MOON_BORDER.png);
+
+  background-size: 100% 100%;
+} 
+.confirm-btn:hover{
+  
+  background-image: url(../assets/employeeOptionalPayment/1111.png);
+
   background-size: 100% 100%;
 }
 

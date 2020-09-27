@@ -175,7 +175,9 @@
   flex-wrap: wrap;
   padding-bottom: 40px;
 }
-
+.noWel{
+  margin-left:50px;;
+}
  .detail-content .detail-item:nth-child(1){
   margin-left:18px;
 }

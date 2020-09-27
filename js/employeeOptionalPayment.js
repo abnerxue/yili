@@ -96,8 +96,8 @@ var EmployeeOption = function () {
           realData = _jsonData[0];
 
      if(realData.GC_MY_EYWF_IF.length===0){
-      $('.box ').css({'background-image':'../assets/background/no_wel.png', 'background-size': '100% 100%',
-      'background-repeat': 'no-repeat'})
+      $('.noWel_ ').css({'display':'block'})
+      $('.noWel_p ').css({'display':'block'})
     
 
      }else{
@@ -134,21 +134,25 @@ var EmployeeOption = function () {
     var id = getQuery('EMPLID');
     var prdId = value.prdId,
         type = value.type;
-        var r=confirm("确认领取福利");
-        if (r==true){
-          request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData', {
-            EMPLID: id,
-            GC_COST_CODE: code,
-            GC_CAL_PRD_ID: prdId,
-            GC_EYWF_C_TYPE: type
-          }, 'GET', function (data) {
+        var r=confirm("请确认是否领取福利");
+        $.MsgBox.Confirm("温馨提示", "确定要进行修改吗？", test);
+      //   var yg = new Ygtoast();
+	    //  yg.toast("你说神马",1500);
+        
+        // if (r==true){
+        //   request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData', {
+        //     EMPLID: id,
+        //     GC_COST_CODE: code,
+        //     GC_CAL_PRD_ID: prdId,
+        //     GC_EYWF_C_TYPE: type
+        //   }, 'GET', function (data) {
            
-            getData()
-          });
-        }
-        else{
+        //     getData()
+        //   });
+        // }
+        // else{
           
-        }
+        // }
 }
 
   function addEvent() {
