@@ -14,7 +14,7 @@ const mywelfareData = [
     },
     GC_SUM_YL_GOODS: {
       TEXT: '累计本单位产品',
-      VALUE: '0元'
+      VALUE: '100元'
     },
     GC_SUM_E_POITS: {
       TEXT: '累计电子积分',
@@ -22,11 +22,11 @@ const mywelfareData = [
     },
     GC_SUM_GOODS: {
       TEXT: '累计实物-劳保',
-      VALUE: '0元'
+      VALUE: '1000元'
     },
     GC_SUM_AMT: {
       TEXT: '累计现金',
-      VALUE: '0元'
+      VALUE: '1000元'
     }
   }
 ]
