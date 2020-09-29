@@ -62,28 +62,32 @@ var EmployeeOption = function () {
   var formValue = {}; // 真实接口数据,开启后删除loadElement
 
   function getData() {
-    var h = $(window).height(),
-        w = $(window).width(); // let temp=h-70
+    $(".receive").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "minimal-dark"
+  });
+    // var h = $(window).height(),
+    //     w = $(window).width(); // let temp=h-70
 
-    $('.container').css('height', h + 'px');
-    $('.container').css('width', w + 'px');
-    $(window).resize(function () {
-      console.log(3);
-      console.log($(window).height());
-      console.log($('.container').height());
-      var h = $(window).height(),
-          w = $(window).width();
-      console.log(50); // let temp=h-70
+    // $('.container').css('height', h + 'px');
+    // $('.container').css('width', w + 'px');
+    // $(window).resize(function () {
+    //   console.log(3);
+    //   console.log($(window).height());
+    //   console.log($('.container').height());
+    //   var h = $(window).height(),
+    //       w = $(window).width();
+    //   console.log(50); // let temp=h-70
 
-      if (h < 1020) {
-        $('.container').css('height', '1010px');
-        console.log($('.container').height());
-      } else {
-        $('.container').css('height', h + 'px');
-        $('.container').css('width', w + 'px');
-        console.log($('.container').height());
-      }
-    });
+    //   if (h < 1020) {
+    //     $('.container').css('height', '1010px');
+    //     console.log($('.container').height());
+    //   } else {
+    //     $('.container').css('height', h + 'px');
+    //     $('.container').css('width', w + 'px');
+    //     console.log($('.container').height());
+    //   }
+    // });
     var id = getQuery('EMPLID');
     request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetChoosetWfData', {
       EMPLID: id
@@ -104,7 +108,7 @@ var EmployeeOption = function () {
       realData.GC_MY_EYWF_IF.forEach(function (d) {
         contentElement += "\n              <div class='welfare-info'>\n                <div class=\"pic\">\n                  <img src=".concat(d.GC_COST_PICTUE.VALUE, " alt=''/>\n                  <div class=\"desc\">\n                    ").concat(d.GC_COST_NAME.VALUE, "\n                  </div>\n                </div>\n                <div class='right-content'>\n                  <p class=\"row\"><span class=\"lable\">").concat(d.GC_COST_DESCR.VALUE, "</p>\n                  <p class=").concat(d.GC_EYWF_NCHOSE_AMT.VALUE === '0元' ? 'hide' : 'row', "><span class=\"lable\">").concat(d.GC_EYWF_NCHOSE_AMT.VALUE, "\uFF0C</span><span>\u5C06\u4EE5").concat(d.GC_EYWF_NCHOSE_DESCR.VALUE, "\u53D1\u653E</span></p>\n                  <p class=\"row\"><span class=\"lable\">").concat(d.GC_EYWF_CHOSE_AMT.VALUE, "\uFF0C</span><span>\u8BF7\u9009\u62E9\u60A8\u5E0C\u671B\u7684\u9886\u53D6\u65B9\u5F0F</span></p>\n                  </div>\n              </div>\n            ");
         d.GC_MY_EYWF_CHOSE.forEach(function (g) {
-          contentElement += "<div class='select-welfare'>\n                <div class='type-item'>\n                <div>\n                  <input\n                    class='select-value' name=".concat('select-value' + d.GC_COST_CODE.VALUE, " type='radio' class='radio-input' id=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + '_' + g.GC_EYWF_C_TYPE.VALUE + '_' + d.GC_CAL_PRD_ID.VALUE, "></input>\n                  <label for=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + g.GC_EYWF_C_TYPE.VALUE + d.GC_CAL_PRD_ID.VALUE, "></label>\n                  <label class='type-desc' for=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + g.GC_EYWF_C_TYPE.VALUE + d.GC_CAL_PRD_ID.VALUE, " class=\"select-value\">").concat(g.GC_EYWF_C_TYPE_DESCR.VALUE, "</label>\n                </div>\n                <div value_>\n                 <span class='value'>").concat(g.GC_EYWF_C_TYPE_AMT.VALUE, "</span>\n                </div>\n                </div>\n                <div class='other-desc'>").concat(g.GC_EYWF_C_TYPE_COMMENT.VALUE, "</div>\n              </div>");
+          contentElement += "<div class='select-welfare'>\n                <div class='type-item'>\n                <div class='type-item_'>\n                  <input\n                    class='select-value' name=".concat('select-value' + d.GC_COST_CODE.VALUE, " type='radio' class='radio-input' id=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + '_' + g.GC_EYWF_C_TYPE.VALUE + '_' + d.GC_CAL_PRD_ID.VALUE, "></input>\n                  <label for=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + g.GC_EYWF_C_TYPE.VALUE + d.GC_CAL_PRD_ID.VALUE, "></label>\n                  <label class='type-desc' for=", "select-value".concat(d.GC_COST_CODE.VALUE, "_").concat(g.GC_EYWF_C_TYPE.VALUE, "_").concat(d.GC_CAL_PRD_ID.VALUE), " value=").concat(d.GC_COST_CODE.VALUE + g.GC_EYWF_C_TYPE.VALUE + d.GC_CAL_PRD_ID.VALUE, " class=\"select-value\">").concat(g.GC_EYWF_C_TYPE_DESCR.VALUE, "</label>\n                </div>\n                <div class='value_'>\n                 <span class='value'>").concat(g.GC_EYWF_C_TYPE_AMT.VALUE, "</span>\n                </div>\n                </div>\n                <div class='other-desc'>").concat(g.GC_EYWF_C_TYPE_COMMENT.VALUE, "</div>\n              </div>");
         });
         contentElement += "<div class=\"confirm-btn cursor_\" data-code=".concat(d.GC_COST_CODE.VALUE, " >\u786E\u8BA4</div>");
       });
@@ -134,25 +138,19 @@ var EmployeeOption = function () {
     var id = getQuery('EMPLID');
     var prdId = value.prdId,
         type = value.type;
-        var r=confirm("请确认是否领取福利");
-        $.MsgBox.Confirm("温馨提示", "确定要进行修改吗？", test);
-      //   var yg = new Ygtoast();
-	    //  yg.toast("你说神马",1500);
-        
-        // if (r==true){
-        //   request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData', {
-        //     EMPLID: id,
-        //     GC_COST_CODE: code,
-        //     GC_CAL_PRD_ID: prdId,
-        //     GC_EYWF_C_TYPE: type
-        //   }, 'GET', function (data) {
-           
-        //     getData()
-        //   });
-        // }
-        // else{
-          
-        // }
+        // var r=confirm("请确认是否领取福利");
+        $.MsgBox.Confirm("消息", "是否确认提交", function () {
+             request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_SetChoosetWfData', {
+              EMPLID: id,
+              GC_COST_CODE: code,
+              GC_CAL_PRD_ID: prdId,
+              GC_EYWF_C_TYPE: type
+            }, 'GET', function (data) {
+             
+              getData()
+            });});
+        console.log($.MsgBox)
+     
 }
 
   function addEvent() {

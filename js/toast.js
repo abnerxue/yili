@@ -1,4 +1,4 @@
-$(function() {
+(function() {
     $.MsgBox = {
         Alert: function(title, msg) {
             GenerateHtml("alert", title, msg);
@@ -55,9 +55,9 @@ $(function() {
             fontSize: '14px',
             color: '#444',
             padding: '10px 15px',
-            backgroundColor: '#DDD',
+            backgroundColor: '#FEA776',
             borderRadius: '15px 15px 0 0',
-            borderBottom: '3px solid #009BFE',
+            borderBottom: '3px solid #FEA776',
             fontWeight: 'bold'
         });
         $("#mb_msg").css({
@@ -78,34 +78,61 @@ $(function() {
             lineHeight: '16px',
             cursor: 'pointer',
             borderRadius: '12px',
-            fontFamily: '微软雅黑'
+            fontFamily: '微软雅黑',
+            backgroundColor:'rgba(255,255,255,0.2)'
         });
         $("#mb_btnbox").css({
             margin: '15px 0 10px 0',
-            textAlign: 'center'
+            textAlign: 'center',
+            height:'60px'
         });
         $("#mb_btn_ok,#mb_btn_no").css({
+            display:'inline',
             width: '85px',
             height: '30px',
             color: 'white',
-            border: 'none'
+            border: 'none',
+            cursor: 'pointer',
         });
+        
         $("#mb_btn_ok").css({
-            backgroundColor: '#168bbb'
+            backgroundColor: '#FEA776'
+        });
+        $("#mb_btn_ok").hover(function() {
+            $(this).css({
+                backgroundColor: '#FF8845',
+                color: 'White'
+            });
+        }, function() {
+            $(this).css({
+                backgroundColor: '#FEA776',
+                color: 'White'
+            });
+        });
+        $("#mb_btn_no").hover(function() {
+            $(this).css({
+                backgroundColor: 'gray',
+                color: 'White'
+            });
+        }, function() {
+            $(this).css({
+                backgroundColor: '#B3B3B3',
+                color: 'White'
+            });
         });
         $("#mb_btn_no").css({
-            backgroundColor: 'gray',
+            backgroundColor: '#B3B3B3',
             marginLeft: '20px'
         });
         //右上角关闭按钮hover样式
         $("#mb_ico").hover(function() {
             $(this).css({
-                backgroundColor: 'Red',
+                backgroundColor: '#FEA776',
                 color: 'White'
             });
         }, function() {
             $(this).css({
-                backgroundColor: '#DDD',
+                backgroundColor: 'rgba(255,255,255,0.2)',
                 color: 'black'
             });
         });

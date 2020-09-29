@@ -63,29 +63,33 @@ var mywelfare = function () {
   var year = YEAR.getFullYear();
 
   function init() {
+    $(".welfare").mCustomScrollbar({
+      autoHideScrollbar: true,
+      theme: "minimal-dark"
+  });
     // 真实接口数据
-    var h = $(window).height(),
-        w = $(window).width(); // let temp=h-70
+    // var h = $(window).height(),
+    //     w = $(window).width(); // let temp=h-70
 
-    $('.container').css('height', h + 'px');
-    $('.container').css('width', w + 'px');
-    console.log($('.container').height());
-    $(window).resize(function () {
-      console.log(3);
-      console.log($(window).height()); // let temp=h-70
+    // $('.container').css('height', h + 'px');
+    // $('.container').css('width', w + 'px');
+    // console.log($('.container').height());
+    // $(window).resize(function () {
+    //   console.log(3);
+    //   console.log($(window).height()); // let temp=h-70
 
-      var h = $(window).height(),
-          w = $(window).width();
+    //   var h = $(window).height(),
+    //       w = $(window).width();
 
-      if (h < 1020) {
-        $('.container').css('height', '1010px');
-        console.log($('.container').height());
-      } else {
-        $('.container').css('height', h + 'px');
-        $('.container').css('width', w + 'px');
-        console.log($('.container').height());
-      }
-    });
+    //   if (h < 1020) {
+    //     $('.container').css('height', '1010px');
+    //     console.log($('.container').height());
+    //   } else {
+    //     $('.container').css('height', h + 'px');
+    //     $('.container').css('width', w + 'px');
+    //     console.log($('.container').height());
+    //   }
+    // });
     var id = getQuery('EMPLID');
     request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetMyWfSum', {
       EMPLID: id
@@ -96,7 +100,7 @@ var mywelfare = function () {
       var _data = _slicedToArray(data, 1),
           realData = _data[0];
 
-      content += "\n          <div>\n              <span class=\"lable\">".concat(realData.GC_SUM_YL_E_SHOPV.TEXT, "</span><span>").concat(realData.GC_SUM_YL_E_SHOPV.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n              <span class=\"lable-item\">").concat(realData.GC_SUM_YL_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_YL_GOODS.VALUE, "</span>\n          </div>\n          <div>\n              <span class=\"lable\">").concat(realData.GC_SUM_E_POITS.TEXT, "</span><span>").concat(realData.GC_SUM_E_POITS.VALUE, "</span>\n          </div>\n          <div class='content-item'>\n            <span class=\"lable-item\">").concat(realData.GC_SUM_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_GOODS.VALUE, "</span>\n        </div>\n        <div>\n          <span class=\"lable\">").concat(realData.GC_SUM_AMT.TEXT, "</span><span>").concat(realData.GC_SUM_AMT.VALUE, "</span>\n        </div>\n     ");
+      content += "\n          <div class=\"content-item\">\n    <div class=\"content-item_left\" >\n   </div>      <div class=\"content-item_right\" >\n  <span class=\"lable\">".concat(realData.GC_SUM_YL_E_SHOPV.TEXT, "</span><span>").concat(realData.GC_SUM_YL_E_SHOPV.VALUE, "</span>\n </div> </div>\n          <div class=\"content-item\">\n   <div class=\"content-item_left\" >\n </div>  <div class=\"content-item_right\" >\n   <span class=\"lable-item\">").concat(realData.GC_SUM_YL_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_YL_GOODS.VALUE, "</span>\n</div>  </div>\n     <div class=\"content-item\">\n      <div class=\"content-item_left\" >\n </div>   <div class=\"content-item_right\" >\n <span class=\"lable\">").concat(realData.GC_SUM_E_POITS.TEXT, "</span><span>").concat(realData.GC_SUM_E_POITS.VALUE, "</span>\n </div>               </div>\n          <div class=\"content-item\" >\n     <div class=\"content-item_left\" >\n </div>  <div class=\"content-item_right\" >\n  <span class=\"lable-item\">").concat(realData.GC_SUM_GOODS.TEXT, "</span><span>").concat(realData.GC_SUM_GOODS.VALUE, "</span>\n  </div>             </div>\n        <div class='content-item'>\n  <div class=\"content-item_left\" >\n </div>  <div class=\"content-item_right\" >\n  <span class=\"lable\">").concat(realData.GC_SUM_AMT.TEXT, "</span><span>").concat(realData.GC_SUM_AMT.VALUE, "</span>\n</div>              </div>\n     ");
       overiewContentElement.html(content);
       console.log(realData);
     }); 
@@ -114,8 +118,8 @@ var mywelfare = function () {
       var detailContent = $('.detail-content');
       var detailDataElement = '';
 
-      var _mywelfareDataDetailD = mywelfareDataDetailData,
-          _mywelfareDataDetailD2 = _slicedToArray(data, 1),
+      // var _mywelfareDataDetailD = mywelfareDataDetailData,
+      var  _mywelfareDataDetailD2 = _slicedToArray(data, 1),
           realDetailData = _mywelfareDataDetailD2[0];
 
       realDetailData.GC_MY_EYWF_IF.forEach(function (d) {
