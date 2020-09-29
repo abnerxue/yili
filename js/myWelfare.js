@@ -68,28 +68,10 @@ var mywelfare = function () {
       theme: "minimal-dark"
   });
     // 真实接口数据
-    // var h = $(window).height(),
-    //     w = $(window).width(); // let temp=h-70
-
-    // $('.container').css('height', h + 'px');
-    // $('.container').css('width', w + 'px');
-    // console.log($('.container').height());
-    // $(window).resize(function () {
-    //   console.log(3);
-    //   console.log($(window).height()); // let temp=h-70
-
-    //   var h = $(window).height(),
-    //       w = $(window).width();
-
-    //   if (h < 1020) {
-    //     $('.container').css('height', '1010px');
-    //     console.log($('.container').height());
-    //   } else {
-    //     $('.container').css('height', h + 'px');
-    //     $('.container').css('width', w + 'px');
-    //     console.log($('.container').height());
-    //   }
-    // });
+    if(localStorage.getItem('background')){
+      $('.container').css('background',localStorage.getItem('background'))
+    }
+    
     var id = getQuery('EMPLID');
     request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetMyWfSum', {
       EMPLID: id
@@ -133,7 +115,7 @@ var mywelfare = function () {
       detailContent.html(detailDataElement);
       addEvent();
     });
-    $('.home').click(function () {
+    $('.home,.header-left-img,.header-split-img,.header-gift-img,.header-title').click(function () {
       var host = window.location.host,
           port = window.location.port;
       window.location.href = 'http://' + host + '/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit';

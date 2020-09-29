@@ -26,7 +26,7 @@ td {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  font-family: "Microsoft YaHei"
 }
 body,
 button,
@@ -56,7 +56,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: couriernew, courier, monospace;
+  font-family: "Microsoft YaHei";
 }
 small {
   font-size: 12px;
@@ -95,56 +95,58 @@ table {
 .cursor_{
   cursor: pointer;
 }
-@font-face {
+/* @font-face {
   font-family: PF-M;
   src:url( ../assets/PingFang-SC-Medium.otf)
-}
+} */
 
 
 body{background-color:transparent;overflow:hidden;color:#000;font-size:18px}
-body,html{height:100%}
+body,html{height:100%;font-family: "Microsoft YaHei"}
 *{margin:0;padding:0}
 
-.header-left-img .header-split-img .header-gift-img .right_pg{height: 80%;}
+.content .header .right{margin: 0.5% 5% 0 0;}
+/* .content .header .left{margin-top: -1%;} */
 @media only screen and (max-width: 1680px) {
-  .detail-content .content .box{
+  .detail-content,.content,.box{
   font-size:12px;
 }
 
 }
-@media only screen and (max-width:1424px){body{font-size:12px} 
-.detail-content .content .box  {
+@media  screen and (max-width:1424px){body{font-size:12px} 
+.detail-content,.content,.box  {
   font-size:12px;
 }
- .header-title{font-size:16px;}
+ /* .header-title,.tittle{font-size:16px;} */
 }
-@media only screen and (max-width:1282px){body{font-size:12px}
-.detail-content .content .box{
-  font-size:12px;
-}
-.header-title{font-size:14px;}
-}
-@media only screen and (max-width:1164px){body{font-size:10px}
-.detail-content .content .box{
+@media  screen and (max-width:1282px){body{font-size:12px}
+.detail-content,.content,.box{
   font-size:10px;
 }
-.header-title{font-size:12px;}
+/* .header-title,.tittle{font-size:14px;} */
 }
-@media only screen and (max-width:1024px){body{font-size:8px}
-.detail-content .content .box{
+@media  screen and (max-width:1164px){body{font-size:10px}
+.detail-content,.content,.box{
   font-size:8px;
 }
-.header-title{font-size:10px;}
+/* .header-title,.tittle{font-size:12px;} */
 }
-@media only screen and (max-width:854px){body{font-size:6px}
-.detail-content .content .box{
+@media  screen and (max-width:1024px){body{font-size:8px}
+.detail-content,.content,.box{
   font-size:6px;
 }
-.header-title{font-size:8px;}
+.header-title,.tittle{font-size:6px;}
 }
-@media only screen and (max-width:427px){body{font-size:4px}
-.detail-content .content .box{
+@media  screen and (max-width:854px){
+  body{font-size:6px}
+.detail-content,.content,.box{
+  font-size:6px;
+}
+.header-title,.tittle{font-size:8px;}
+}
+@media  screen and (max-width:427px){body{font-size:4px}
+.detail-content,.content,.box{
   font-size:4px;
 }
-.header-title{font-size:6px;}
+.header-title,.tittle{font-size:6px;}
 }

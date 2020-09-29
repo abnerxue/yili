@@ -66,28 +66,9 @@ var EmployeeOption = function () {
       autoHideScrollbar: true,
       theme: "minimal-dark"
   });
-    // var h = $(window).height(),
-    //     w = $(window).width(); // let temp=h-70
-
-    // $('.container').css('height', h + 'px');
-    // $('.container').css('width', w + 'px');
-    // $(window).resize(function () {
-    //   console.log(3);
-    //   console.log($(window).height());
-    //   console.log($('.container').height());
-    //   var h = $(window).height(),
-    //       w = $(window).width();
-    //   console.log(50); // let temp=h-70
-
-    //   if (h < 1020) {
-    //     $('.container').css('height', '1010px');
-    //     console.log($('.container').height());
-    //   } else {
-    //     $('.container').css('height', h + 'px');
-    //     $('.container').css('width', w + 'px');
-    //     console.log($('.container').height());
-    //   }
-    // });
+    if(localStorage.getItem('background')){
+      $('.container').css('background',localStorage.getItem('background'))
+    }
     var id = getQuery('EMPLID');
     request('/WEBLIB_EYWF_LIB.GC_MY_EYWF_LIB.FieldFormula.Iscript_GetChoosetWfData', {
       EMPLID: id
@@ -173,9 +154,9 @@ var EmployeeOption = function () {
       var dataset = e.target.dataset;
       submit(dataset.code, formValue[dataset.code]);
     });
-    $('.home').click(function () {
-      var host = window.location.host,
-          port = window.location.port;
+    $('.home,.header-left-img,.header-split-img,.header-gift-img,.header-title').click(function () {
+      var host = window.location.host
+         
       window.location.href = 'http://' + host + '/psc/HCMTST/EMPLOYEE/HRMS/s/WEBLIB_EYWF_LIB.GC_HOME_EYWF_LIB.FieldFormula.Iscript_HomeInit';
     });
     $('.close-icon').click(function () {
