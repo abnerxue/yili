@@ -9,7 +9,7 @@ html,body{
   min-width: 100px;
 
   height: 100%;
-  background-image: url('%image(GC_EYWF_CKBG_PNG)');
+  background-image: url('../assets/employeeOptionalPayment/GC_EYWF_BIRTHDAY_OX.png');
   background-repeat: no-repeat;
   /* background-size: 1920px 1080px; */
   background-size: 100% 100%;

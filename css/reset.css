@@ -104,6 +104,8 @@ table {
 body{background-color:transparent;overflow:hidden;color:#000;font-size:18px}
 body,html{height:100%}
 *{margin:0;padding:0}
+
+.header-left-img .header-split-img .header-gift-img .right_pg{height: 80%;}
 @media only screen and (max-width: 1680px) {
   .detail-content .content .box{
   font-size:12px;
@@ -111,33 +113,38 @@ body,html{height:100%}
 
 }
 @media only screen and (max-width:1424px){body{font-size:12px} 
-.detail-content .content .box{
+.detail-content .content .box  {
   font-size:12px;
 }
-
+ .header-title{font-size:16px;}
 }
 @media only screen and (max-width:1282px){body{font-size:12px}
 .detail-content .content .box{
   font-size:12px;
 }
+.header-title{font-size:14px;}
 }
 @media only screen and (max-width:1164px){body{font-size:10px}
 .detail-content .content .box{
   font-size:10px;
 }
+.header-title{font-size:12px;}
 }
 @media only screen and (max-width:1024px){body{font-size:8px}
 .detail-content .content .box{
   font-size:8px;
 }
+.header-title{font-size:10px;}
 }
 @media only screen and (max-width:854px){body{font-size:6px}
 .detail-content .content .box{
   font-size:6px;
 }
+.header-title{font-size:8px;}
 }
 @media only screen and (max-width:427px){body{font-size:4px}
 .detail-content .content .box{
   font-size:4px;
 }
+.header-title{font-size:6px;}
 }
